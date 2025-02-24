@@ -14,7 +14,7 @@ namespace MediaTek86.dal
         /// <summary>
         /// chaine de connexion à la bdd
         /// </summary>
-        private static readonly string connectionString = "server=localhost;user id=admin34100@;password=OoFnmalB(.ajdrsI;database=mediatek86;";
+        private static readonly string connectionString = "server=localhost;user id=mediatek86;password=yZJP]YCuomae)H5k;database=mediatek86;";
         /// <summary>
         /// instance unique de la classe
         /// </summary>

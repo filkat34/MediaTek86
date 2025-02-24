@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MediaTek86.view
+namespace MediaTek86
 {
-    public partial class AvertissementChampsNonRemplis : Form
+    public partial class GestionPersonnel : Form
     {
-        public AvertissementChampsNonRemplis()
+        public GestionPersonnel()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86
 {
-    partial class Main
+    partial class GestionPersonnel
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

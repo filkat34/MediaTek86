@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.model
 {
-    public class service
+    public class Service
     {
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
         /// <param name="idservice"></param>
         /// <param name="nom"></param>
-        public service(int idservice, String nom)
+        public Service(int idservice, String nom)
         {
             this.Idservice = idservice;
             this.Nom = nom;

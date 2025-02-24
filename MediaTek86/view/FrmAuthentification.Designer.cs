@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86.view
 {
-    partial class Connexion
+    partial class FrmAuthentification
     {
         /// <summary>
         /// Required designer variable.
@@ -70,14 +70,15 @@
             // 
             // BtnConnexion
             // 
-            this.BtnConnexion.Location = new System.Drawing.Point(174, 115);
+            this.BtnConnexion.Location = new System.Drawing.Point(163, 115);
             this.BtnConnexion.Name = "BtnConnexion";
             this.BtnConnexion.Size = new System.Drawing.Size(96, 30);
             this.BtnConnexion.TabIndex = 4;
             this.BtnConnexion.Text = "Connexion";
             this.BtnConnexion.UseVisualStyleBackColor = true;
+            this.BtnConnexion.Click += new System.EventHandler(this.BtnConnexion_Click_1);
             // 
-            // Connexion
+            // FrmAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +88,8 @@
             this.Controls.Add(this.TxtBoxLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Connexion";
+            this.MaximizeBox = false;
+            this.Name = "FrmAuthentification";
             this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();

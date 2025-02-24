@@ -52,8 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bddmanager\BddManager.cs" />
+    <Compile Include="controller\FrmAuthentificationController.cs" />
     <Compile Include="dal\Access.cs" />
+    <Compile Include="dal\ResponsableAccess.cs" />
     <Compile Include="model\absence.cs" />
+    <Compile Include="model\Admin.cs" />
     <Compile Include="model\motif.cs" />
     <Compile Include="model\personnel.cs" />
     <Compile Include="model\responsable.cs" />
@@ -70,17 +73,11 @@
     <Compile Include="view\AjoutModifPersonnel.Designer.cs">
       <DependentUpon>AjoutModifPersonnel.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\AvertissementChampsNonRemplis.cs">
+    <Compile Include="view\FrmAuthentification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\AvertissementChampsNonRemplis.Designer.cs">
-      <DependentUpon>AvertissementChampsNonRemplis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="view\Connexion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\Connexion.Designer.cs">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <Compile Include="view\FrmAuthentification.Designer.cs">
+      <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </Compile>
     <Compile Include="view\GestionAbsences.cs">
       <SubType>Form</SubType>
@@ -88,11 +85,11 @@
     <Compile Include="view\GestionAbsences.Designer.cs">
       <DependentUpon>GestionAbsences.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Main.cs">
+    <Compile Include="view\GestionPersonnel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="view\GestionPersonnel.Designer.cs">
+      <DependentUpon>GestionPersonnel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,17 +111,14 @@
     <EmbeddedResource Include="view\AjoutModifPersonnel.resx">
       <DependentUpon>AjoutModifPersonnel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\AvertissementChampsNonRemplis.resx">
-      <DependentUpon>AvertissementChampsNonRemplis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="view\Connexion.resx">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <EmbeddedResource Include="view\FrmAuthentification.resx">
+      <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\GestionAbsences.resx">
       <DependentUpon>GestionAbsences.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="view\GestionPersonnel.resx">
+      <DependentUpon>GestionPersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +135,7 @@
     <EmbeddedResource Include="view\SupprPers.resx">
       <DependentUpon>SupprPers.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\MediaTek86.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,7 +150,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="controller\" />
+    <Content Include="bin\Debug\.documentation.xml" />
+    <Content Include="bin\Debug\MediaTek86.exe" />
+    <Content Include="bin\Debug\MediaTek86.pdb" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

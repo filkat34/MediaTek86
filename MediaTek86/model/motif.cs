@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.model
 {
-    public class motif
+    public class Motif
     {
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
         /// <param name="idmotif"></param>
         /// <param name="libelle"></param>
-        public motif(int idmotif, String libelle)
+        public Motif(int idmotif, String libelle)
         {
             this.IdMotif = idmotif;
             this.Libelle = libelle;

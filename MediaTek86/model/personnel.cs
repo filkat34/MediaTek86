@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.model
 {
-    public class personnel
+    public class Personnel
     {/// <summary>
      /// Valorise les propriétés
      /// </summary>
@@ -15,7 +15,7 @@ namespace MediaTek86.model
      /// <param name="prenom"></param>
      /// <param name="tel"></param>
      /// <param name="mail"></param>
-        public personnel(int idpersonnel, string nom, string prenom, string tel, string mail)
+        public Personnel(int idpersonnel, string nom, string prenom, string tel, string mail)
         {
             this.Idpersonnel = idpersonnel;
             this.Nom = nom;

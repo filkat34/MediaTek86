@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MediaTek86.view;
 
 
 namespace MediaTek86
@@ -18,7 +17,7 @@ namespace MediaTek86
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connexion());
+            Application.Run(new view.FrmAuthentification());
         }
     }
 }
