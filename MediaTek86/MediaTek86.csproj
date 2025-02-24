@@ -46,16 +46,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="view\Form1.cs">
+    <Compile Include="view\AjoutAbsence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="view\AjoutAbsence.Designer.cs">
+      <DependentUpon>AjoutAbsence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\AjoutModifPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\AjoutModifPersonnel.Designer.cs">
+      <DependentUpon>AjoutModifPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\AvertissementChampsNonRemplis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\AvertissementChampsNonRemplis.Designer.cs">
+      <DependentUpon>AvertissementChampsNonRemplis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\GestionAbsences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\GestionAbsences.Designer.cs">
+      <DependentUpon>GestionAbsences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="view\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="view\ModifPersAvertissement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ModifPersAvertissement.Designer.cs">
+      <DependentUpon>ModifPersAvertissement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\SupprPers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\SupprPers.Designer.cs">
+      <DependentUpon>SupprPers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\AjoutAbsence.resx">
+      <DependentUpon>AjoutAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\AjoutModifPersonnel.resx">
+      <DependentUpon>AjoutModifPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\AvertissementChampsNonRemplis.resx">
+      <DependentUpon>AvertissementChampsNonRemplis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\GestionAbsences.resx">
+      <DependentUpon>GestionAbsences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +123,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\ModifPersAvertissement.resx">
+      <DependentUpon>ModifPersAvertissement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\SupprPers.resx">
+      <DependentUpon>SupprPers.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
