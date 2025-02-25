@@ -12,6 +12,7 @@ namespace MediaTek86.view
         /// </summary>
         private FrmAuthentificationController controller;
 
+
         /// <summary>
         /// Conrtuction des composants graphiques et appel des autres initialisations
         /// </summary>
@@ -49,6 +50,8 @@ namespace MediaTek86.view
                 Admin admin = new Admin(login, pwd);
                 if (controller.ControleAuthentification(admin))
                 {
+                    TxtBoxLogin.Clear();
+                    TxtBoxPwd.Clear();
                     GestionPersonnel gestion = new GestionPersonnel();
                     gestion.ShowDialog();
                 }

@@ -89,7 +89,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(436, 208);
+            this.MinimumSize = new System.Drawing.Size(436, 208);
             this.Name = "FrmAuthentification";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
