@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="bddmanager\BddManager.cs" />
     <Compile Include="controller\FrmAuthentificationController.cs" />
+    <Compile Include="controller\FrmGestionPersonnelController.cs" />
     <Compile Include="dal\Access.cs" />
     <Compile Include="dal\ResponsableAccess.cs" />
     <Compile Include="model\absence.cs" />

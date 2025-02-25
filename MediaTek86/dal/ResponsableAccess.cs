@@ -56,5 +56,35 @@ namespace MediaTek86.dal
             }
             return false;
         }
+
+    public List<Personnel> GetLesPersonnels()
+        {
+            List<Personnel> lesPersonnels = new List<Personnel>();
+            if (access.Manager != null)
+            {
+                string req = "select idpersonnel as id, nom, prenom, tel, mail ";
+                req += "from personnel ";
+                req += "order by nom, prenom;";
+                try
+                {
+                    List<Object[]> records = access.Manager.ReqSelect(req);
+                    if (records != null)
+                    {
+                        foreach (Object[] record in records)
+                        {
+                            Personnel personnel = new Personnel((int)record[0], (string)record[1], (string)record[2],
+                                (string)record[3], (string)record[4]);
+                            lesPersonnels.Add(personnel);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+            return lesPersonnels;
+        }
     }
 }

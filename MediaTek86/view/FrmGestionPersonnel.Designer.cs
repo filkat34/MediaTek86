@@ -45,39 +45,48 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BtnPersEnregistrer = new System.Windows.Forms.Button();
             this.BtnSupprAbs = new System.Windows.Forms.Button();
             this.BtnAbsModif = new System.Windows.Forms.Button();
             this.BtnAbsAjout = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.GridViewAbsences = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.BtnAbsEnregistrer = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.CBoxMotifAbs = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.daTimeAbsFin = new System.Windows.Forms.DateTimePicker();
             this.daTimeAbsDeb = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.BtnPersEnregistrer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPersonnels)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAbsences)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridPersonnels
             // 
+            this.dataGridPersonnels.AllowUserToAddRows = false;
+            this.dataGridPersonnels.AllowUserToDeleteRows = false;
             this.dataGridPersonnels.AllowUserToOrderColumns = true;
+            this.dataGridPersonnels.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridPersonnels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPersonnels.GridColor = System.Drawing.SystemColors.Window;
             this.dataGridPersonnels.Location = new System.Drawing.Point(14, 19);
+            this.dataGridPersonnels.MultiSelect = false;
             this.dataGridPersonnels.Name = "dataGridPersonnels";
+            this.dataGridPersonnels.ReadOnly = true;
+            this.dataGridPersonnels.RowHeadersVisible = false;
+            this.dataGridPersonnels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridPersonnels.ShowEditingIcon = false;
             this.dataGridPersonnels.Size = new System.Drawing.Size(465, 352);
             this.dataGridPersonnels.TabIndex = 0;
             // 
@@ -235,6 +244,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gestion du personnel";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(11, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(117, 116);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 41;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(259, 233);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 39);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Consulter les absences\r\n↓";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // BtnPersEnregistrer
+            // 
+            this.BtnPersEnregistrer.Enabled = false;
+            this.BtnPersEnregistrer.Location = new System.Drawing.Point(11, 220);
+            this.BtnPersEnregistrer.Name = "BtnPersEnregistrer";
+            this.BtnPersEnregistrer.Size = new System.Drawing.Size(117, 23);
+            this.BtnPersEnregistrer.TabIndex = 22;
+            this.BtnPersEnregistrer.Text = "Enregistrer";
+            this.BtnPersEnregistrer.UseVisualStyleBackColor = true;
+            // 
             // BtnSupprAbs
             // 
             this.BtnSupprAbs.Enabled = false;
@@ -303,6 +341,26 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Gestion des absences";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(347, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 116);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 49);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Date de début";
+            // 
             // BtnAbsEnregistrer
             // 
             this.BtnAbsEnregistrer.Enabled = false;
@@ -312,6 +370,15 @@
             this.BtnAbsEnregistrer.TabIndex = 39;
             this.BtnAbsEnregistrer.Text = "Enregistrer";
             this.BtnAbsEnregistrer.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Date de fin";
             // 
             // CBoxMotifAbs
             // 
@@ -326,6 +393,15 @@
             this.CBoxMotifAbs.Name = "CBoxMotifAbs";
             this.CBoxMotifAbs.Size = new System.Drawing.Size(200, 21);
             this.CBoxMotifAbs.TabIndex = 38;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 209);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Motif";
             // 
             // daTimeAbsFin
             // 
@@ -343,74 +419,7 @@
             this.daTimeAbsDeb.Size = new System.Drawing.Size(200, 20);
             this.daTimeAbsDeb.TabIndex = 36;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 209);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Motif";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 122);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Date de fin";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 49);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Date de début";
-            // 
-            // BtnPersEnregistrer
-            // 
-            this.BtnPersEnregistrer.Enabled = false;
-            this.BtnPersEnregistrer.Location = new System.Drawing.Point(11, 220);
-            this.BtnPersEnregistrer.Name = "BtnPersEnregistrer";
-            this.BtnPersEnregistrer.Size = new System.Drawing.Size(117, 23);
-            this.BtnPersEnregistrer.TabIndex = 22;
-            this.BtnPersEnregistrer.Text = "Enregistrer";
-            this.BtnPersEnregistrer.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(259, 233);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 39);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Consulter les absences\r\n↓";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(347, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 116);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 40;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 116);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 41;
-            this.pictureBox2.TabStop = false;
-            // 
-            // GestionPersonnel
+            // FrmGestionPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -422,19 +431,19 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1061, 718);
             this.MinimumSize = new System.Drawing.Size(1061, 718);
-            this.Name = "GestionPersonnel";
+            this.Name = "FrmGestionPersonnel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MediaTek86";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPersonnels)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAbsences)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

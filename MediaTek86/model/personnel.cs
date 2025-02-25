@@ -15,13 +15,14 @@ namespace MediaTek86.model
      /// <param name="prenom"></param>
      /// <param name="tel"></param>
      /// <param name="mail"></param>
-        public Personnel(int idpersonnel, string nom, string prenom, string tel, string mail)
+        public Personnel(int idpersonnel, string nom, string prenom, string tel, string mail, Service service)
         {
             this.Idpersonnel = idpersonnel;
             this.Nom = nom;
             this.Prenom = prenom;
             this.Tel = tel;
             this.Mail = mail;
+            this.Service = Service;
         }
 
         public int Idpersonnel { get; }
@@ -29,5 +30,6 @@ namespace MediaTek86.model
         public string Prenom { get; set; }
         public string Tel { get; set; }
         public string Mail { get; set; }
+        public Service Service { get; set; }
     }
 }
