@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MediaTek86
 {
-    public partial class GestionPersonnel : Form
+    public partial class FrmGestionPersonnel : Form
     {
-        public GestionPersonnel()
+        public FrmGestionPersonnel()
         {
             InitializeComponent();
         }

@@ -52,7 +52,7 @@ namespace MediaTek86.view
                 {
                     TxtBoxLogin.Clear();
                     TxtBoxPwd.Clear();
-                    GestionPersonnel gestion = new GestionPersonnel();
+                    FrmGestionPersonnel gestion = new FrmGestionPersonnel();
                     gestion.ShowDialog();
                 }
                 else

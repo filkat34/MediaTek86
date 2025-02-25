@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86
 {
-    partial class GestionPersonnel
+    partial class FrmGestionPersonnel
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionPersonnel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionPersonnel));
             this.dataGridPersonnels = new System.Windows.Forms.DataGridView();
             this.BtnPersSupprimer = new System.Windows.Forms.Button();
             this.BtnModifier = new System.Windows.Forms.Button();

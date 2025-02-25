@@ -67,19 +67,19 @@
     <Compile Include="view\FrmAuthentification.Designer.cs">
       <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\GestionPersonnel.cs">
+    <Compile Include="view\FrmGestionPersonnel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\GestionPersonnel.Designer.cs">
-      <DependentUpon>GestionPersonnel.cs</DependentUpon>
+    <Compile Include="view\FrmGestionPersonnel.Designer.cs">
+      <DependentUpon>FrmGestionPersonnel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="view\FrmAuthentification.resx">
       <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\GestionPersonnel.resx">
-      <DependentUpon>GestionPersonnel.cs</DependentUpon>
+    <EmbeddedResource Include="view\FrmGestionPersonnel.resx">
+      <DependentUpon>FrmGestionPersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
