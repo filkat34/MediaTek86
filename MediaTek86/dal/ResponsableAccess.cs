@@ -62,9 +62,9 @@ namespace MediaTek86.dal
             List<Personnel> lesPersonnels = new List<Personnel>();
             if (access.Manager != null)
             {
-                string req = "select idpersonnel as id, nom, prenom, tel, mail ";
-                req += "from personnel ";
-                req += "order by nom, prenom;";
+                string req = "select personnel.idservice, personnel.nom, personnel.prenom, personnel.tel, personnel.mail, personnel.idservice, service.nom as service ";
+                req += "from personnel join service on (personnel.idservice = service.idservice) ";
+                req += "order by personnel.nom, personnel.prenom;";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -73,7 +73,7 @@ namespace MediaTek86.dal
                         foreach (Object[] record in records)
                         {
                             Personnel personnel = new Personnel((int)record[0], (string)record[1], (string)record[2],
-                                (string)record[3], (string)record[4]);
+                                (string)record[3], (string)record[4], (int)record[5], (string)record[6]);
                             lesPersonnels.Add(personnel);
                         }
                     }

@@ -54,6 +54,7 @@ namespace MediaTek86
             bdgPersonnels.DataSource = lesPersonnels;
             dataGridPersonnels.DataSource = bdgPersonnels;
             dataGridPersonnels.Columns["idpersonnel"].Visible = false;
+            dataGridPersonnels.Columns["idservice"].Visible = false;
             //dataGridPersonnels.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
     }
