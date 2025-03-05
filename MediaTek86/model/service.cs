@@ -20,5 +20,14 @@ namespace MediaTek86.model
         }
         public int Idservice { get; }
         public String Nom { get; set; }
+
+        /// <summary>
+        /// Définit l'information à afficher (juste le nom)
+        /// </summary>
+        /// <returns>nom du profil</returns>
+        public override string ToString()
+        {
+            return this.Nom;
+        }
     }
 }

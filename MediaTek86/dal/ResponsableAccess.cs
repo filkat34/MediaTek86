@@ -62,7 +62,7 @@ namespace MediaTek86.dal
             List<Personnel> lesPersonnels = new List<Personnel>();
             if (access.Manager != null)
             {
-                string req = "select personnel.idservice, personnel.nom, personnel.prenom, personnel.tel, personnel.mail, personnel.idservice, service.nom as service ";
+                string req = "select personnel.idpersonnel, personnel.nom, personnel.prenom, personnel.tel, personnel.mail, personnel.idservice, service.nom as service ";
                 req += "from personnel join service on (personnel.idservice = service.idservice) ";
                 req += "order by personnel.nom, personnel.prenom;";
                 try
@@ -72,8 +72,9 @@ namespace MediaTek86.dal
                     {
                         foreach (Object[] record in records)
                         {
+                            Service service = new Service((int)record[5], (string)record[6]);
                             Personnel personnel = new Personnel((int)record[0], (string)record[1], (string)record[2],
-                                (string)record[3], (string)record[4], (int)record[5], (string)record[6]);
+                                (string)record[3], (string)record[4], service);
                             lesPersonnels.Add(personnel);
                         }
                     }
@@ -85,6 +86,34 @@ namespace MediaTek86.dal
                 }
             }
             return lesPersonnels;
+        }
+
+        /// <summary>
+        /// Demande d'ajout un développeur
+        /// </summary>
+        /// <param name="personnel">objet personnel à ajouter</param>
+        public void AddPersonnel(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "insert into personnel(nom, prenom, tel, mail, nomservice) ";
+                req += "values (@nom, @prenom, @tel, @mail, @nomservice);";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@nom", personnel.Nom);
+                parameters.Add("@prenom", personnel.Prenom);
+                parameters.Add("@tel", personnel.Tel);
+                parameters.Add("@mail", personnel.Mail);
+                parameters.Add("@nomservice", personnel.Service);
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
         }
     }
 }

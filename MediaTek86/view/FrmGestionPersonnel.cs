@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MediaTek86.controller;
 using MediaTek86.model;
-using MediaTek86.dal;
 
 namespace MediaTek86
 {
@@ -54,8 +53,9 @@ namespace MediaTek86
             bdgPersonnels.DataSource = lesPersonnels;
             dataGridPersonnels.DataSource = bdgPersonnels;
             dataGridPersonnels.Columns["idpersonnel"].Visible = false;
-            dataGridPersonnels.Columns["idservice"].Visible = false;
             //dataGridPersonnels.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
+
     }
-}
+    }
+
