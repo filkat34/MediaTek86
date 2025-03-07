@@ -35,9 +35,37 @@ namespace MediaTek86.controller
             return responsableAccess.GetLesPersonnels();
         }
 
+        // <summary>
+        /// Demande d'ajout d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet personnel à ajouter</param>
+        public void AddPersonnel(Personnel personnel)
+        {
+            responsableAccess.AddPersonnel(personnel);
+        }
+
+        /// <summary>
+        /// Demande de modification d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet personnel à modifier</param>
+        public void UpdatePersonnel(Personnel personnel)
+        {
+            responsableAccess.UpdatePersonnel(personnel);
+        }
+
+        // <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet developpeur à supprimer</param>
+        public void DelPersonnel(Personnel personnel)
+        {
+            responsableAccess.DelPersonnel(personnel);
+        }
+
         public List<Absence> GetLesAbsences()
         {
             return responsableAccess.GetLesAbsences();
         }
+
     }
 }
