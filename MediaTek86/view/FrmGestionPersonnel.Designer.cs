@@ -1,4 +1,6 @@
-﻿namespace MediaTek86
+﻿using System.Windows.Forms;
+
+namespace MediaTek86
 {
     partial class FrmGestionPersonnel
     {
@@ -74,6 +76,8 @@
             this.dataGridPersonnels.AllowUserToAddRows = false;
             this.dataGridPersonnels.AllowUserToDeleteRows = false;
             this.dataGridPersonnels.AllowUserToOrderColumns = true;
+            this.dataGridPersonnels.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPersonnels.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridPersonnels.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridPersonnels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPersonnels.GridColor = System.Drawing.SystemColors.Window;
@@ -82,6 +86,7 @@
             this.dataGridPersonnels.Name = "dataGridPersonnels";
             this.dataGridPersonnels.ReadOnly = true;
             this.dataGridPersonnels.RowHeadersVisible = false;
+            this.dataGridPersonnels.RowTemplate.ReadOnly = true;
             this.dataGridPersonnels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPersonnels.ShowEditingIcon = false;
             this.dataGridPersonnels.Size = new System.Drawing.Size(503, 387);
@@ -241,11 +246,9 @@
             this.BtnPersEnregistrer.TabIndex = 22;
             this.BtnPersEnregistrer.Text = "Enregistrer";
             this.BtnPersEnregistrer.UseVisualStyleBackColor = true;
-            this.BtnPersEnregistrer.Click += new System.EventHandler(this.BtnPersEnregistrer_Click);
             // 
             // BtnSupprAbs
             // 
-            this.BtnSupprAbs.Enabled = false;
             this.BtnSupprAbs.Location = new System.Drawing.Point(377, 132);
             this.BtnSupprAbs.Name = "BtnSupprAbs";
             this.BtnSupprAbs.Size = new System.Drawing.Size(88, 23);
@@ -255,7 +258,6 @@
             // 
             // BtnAbsModif
             // 
-            this.BtnAbsModif.Enabled = false;
             this.BtnAbsModif.Location = new System.Drawing.Point(265, 132);
             this.BtnAbsModif.Name = "BtnAbsModif";
             this.BtnAbsModif.Size = new System.Drawing.Size(88, 23);
@@ -275,10 +277,22 @@
             // 
             // GridViewAbsences
             // 
+            this.GridViewAbsences.AllowUserToAddRows = false;
+            this.GridViewAbsences.AllowUserToDeleteRows = false;
+            this.GridViewAbsences.AllowUserToOrderColumns = true;
+            this.GridViewAbsences.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridViewAbsences.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridViewAbsences.BackgroundColor = System.Drawing.SystemColors.Window;
             this.GridViewAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewAbsences.GridColor = System.Drawing.SystemColors.Window;
             this.GridViewAbsences.Location = new System.Drawing.Point(11, 19);
+            this.GridViewAbsences.MultiSelect = false;
             this.GridViewAbsences.Name = "GridViewAbsences";
+            this.GridViewAbsences.ReadOnly = true;
+            this.GridViewAbsences.RowHeadersVisible = false;
+            this.GridViewAbsences.RowTemplate.ReadOnly = true;
+            this.GridViewAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridViewAbsences.ShowEditingIcon = false;
             this.GridViewAbsences.Size = new System.Drawing.Size(468, 457);
             this.GridViewAbsences.TabIndex = 0;
             // 
@@ -332,7 +346,6 @@
             // 
             // CBoxMotifAbs
             // 
-            this.CBoxMotifAbs.Enabled = false;
             this.CBoxMotifAbs.FormattingEnabled = true;
             this.CBoxMotifAbs.Items.AddRange(new object[] {
             "vacances",
@@ -355,7 +368,6 @@
             // 
             // daTimeAbsFin
             // 
-            this.daTimeAbsFin.Enabled = false;
             this.daTimeAbsFin.Location = new System.Drawing.Point(265, 55);
             this.daTimeAbsFin.Name = "daTimeAbsFin";
             this.daTimeAbsFin.Size = new System.Drawing.Size(200, 20);
@@ -363,7 +375,6 @@
             // 
             // BtnAbsEnregistrer
             // 
-            this.BtnAbsEnregistrer.Enabled = false;
             this.BtnAbsEnregistrer.Location = new System.Drawing.Point(154, 132);
             this.BtnAbsEnregistrer.Name = "BtnAbsEnregistrer";
             this.BtnAbsEnregistrer.Size = new System.Drawing.Size(88, 23);
@@ -373,7 +384,6 @@
             // 
             // daTimeAbsDeb
             // 
-            this.daTimeAbsDeb.Enabled = false;
             this.daTimeAbsDeb.Location = new System.Drawing.Point(265, 16);
             this.daTimeAbsDeb.Name = "daTimeAbsDeb";
             this.daTimeAbsDeb.Size = new System.Drawing.Size(200, 20);
@@ -383,7 +393,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 679);
+            this.ClientSize = new System.Drawing.Size(1045, 678);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);

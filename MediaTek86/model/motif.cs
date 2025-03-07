@@ -20,5 +20,10 @@ namespace MediaTek86.model
         }
         public int IdMotif { get; }
         public String Libelle { get; set; }
+
+        public override string ToString()
+        {
+            return this.Libelle;
+        }
     }
 }

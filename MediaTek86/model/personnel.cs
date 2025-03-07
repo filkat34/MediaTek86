@@ -31,5 +31,10 @@ namespace MediaTek86.model
         public string Tel { get; set; }
         public string Mail { get; set; }
         public Service Service { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nom + " " + this.Prenom;
+        }
     }
 }

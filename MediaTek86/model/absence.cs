@@ -13,12 +13,18 @@ namespace MediaTek86.model
         /// </summary>
         /// <param name="datedebut"></param>
         /// <param name="datefin"></param>
-        public Absence(DateTime datedebut, DateTime datefin)
+        /// /// <param name="personnel"></param>
+        /// <param name="motif"></param>
+        public Absence(DateTime datedebut, DateTime datefin, Motif motif, Personnel personnel)
         {
             this.Datedebut = datedebut;
             this.Datefin = datefin;
+            this.Personnel = personnel;
+            this.Motif = motif;
         }
         public DateTime Datedebut { get; set; }
         public DateTime Datefin { get; set; }
+        public Personnel Personnel {get; set;}
+        public Motif Motif { get; set;}
     }
 }

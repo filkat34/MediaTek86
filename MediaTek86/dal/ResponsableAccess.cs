@@ -57,12 +57,17 @@ namespace MediaTek86.dal
             return false;
         }
 
+        /// <summary>
+        /// Récupère et retourne les personnels
+        /// </summary>
+        /// <returns>liste des personnels</returns>
     public List<Personnel> GetLesPersonnels()
         {
             List<Personnel> lesPersonnels = new List<Personnel>();
             if (access.Manager != null)
             {
-                string req = "select personnel.idpersonnel, personnel.nom, personnel.prenom, personnel.tel, personnel.mail, personnel.idservice, service.nom as service ";
+                string req = "select personnel.idpersonnel, personnel.nom, personnel.prenom, personnel.tel, ";
+                req += "personnel.mail, personnel.idservice, service.nom as service ";
                 req += "from personnel join service on (personnel.idservice = service.idservice) ";
                 req += "order by personnel.nom, personnel.prenom;";
                 try
@@ -88,54 +93,37 @@ namespace MediaTek86.dal
             return lesPersonnels;
         }
 
-        /// <summary>
-        /// Demande d'ajout un personnel
-        /// </summary>
-        /// <param name="personnel">objet personnel à ajouter</param>
-        public void AddPersonnel(Personnel personnel)
+        public List<Absence> GetLesAbsences()
         {
+            List<Absence> lesAbsences = new List<Absence>();
             if (access.Manager != null)
             {
-                string req = "insert into personnel(nom, prenom, tel, mail, nomservice) ";
-                req += "values (@nom, @prenom, @tel, @mail, @nomservice);";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@nom", personnel.Nom);
-                parameters.Add("@prenom", personnel.Prenom);
-                parameters.Add("@tel", personnel.Tel);
-                parameters.Add("@mail", personnel.Mail);
-                parameters.Add("@nomservice", personnel.Service);
-                try
-                {
-                    access.Manager.ReqUpdate(req, parameters);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    Environment.Exit(0);
-                }
-            }
-        }
+                string req = "select absence.datedebut, absence.datefin, motif.idmotif, motif.libelle, ";
+                req += "personnel.idpersonnel, personnel.nom, personnel.prenom, personnel.tel, ";
+                req += "personnel.mail, personnel.idservice, service.nom ";
+                req += "from personnel join service on (personnel.idservice = service.idservice) ";
+                req += "join absence on (personnel.idpersonnel = absence.idpersonnel) ";
+                req += "join motif on (absence.idmotif = motif.idmotif) ";
+                req += "order by absence.datedebut DESC;";
 
-        /// <summary>
-        /// Demande de modification d'un personnel
-        /// </summary>
-        /// <param name="personnel">objet personnel à modifier</param>
-        public void UpdatePersonnel(Personnel personnel)
-        {
-            if (access.Manager != null)
-            {
-                string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
-                req += "where iddeveloppeur = @iddeveloppeur;";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idPersonnel", personnel.Idpersonnel);
-                parameters.Add("@nom", personnel.Nom);
-                parameters.Add("@prenom", personnel.Prenom);
-                parameters.Add("@tel", personnel.Tel);
-                parameters.Add("@mail", personnel.Mail);
-                parameters.Add("@idprofil", personnel.Service.Idservice);
+                //string req = "select absence.datedebut, absence.datefin, motif.idmotif, motif.libelle ";
+                //req += "from absence join motif on (absence.idmotif = motif.idmotif) ";
+                //req += "order by absence.datedebut;";
                 try
                 {
-                    access.Manager.ReqUpdate(req, parameters);
+                    List<Object[]> records = access.Manager.ReqSelect(req);
+                    if (records != null)
+                    {
+                        foreach (Object[] record in records)
+                        {
+                            Service service = new Service((int)record[9], (string)record[10]);
+                            Personnel personnel = new Personnel((int)record[4], (string)record[5], (string)record[6],
+                                (string)record[7], (string)record[8], service);
+                            Motif motif = new Motif((int)record[2], (string)record[3]);
+                            Absence absence = new Absence((DateTime)record[0], (DateTime)record[1], motif, personnel);
+                            lesAbsences.Add(absence);
+                        }
+                    }
                 }
                 catch (Exception e)
                 {
@@ -143,6 +131,7 @@ namespace MediaTek86.dal
                     Environment.Exit(0);
                 }
             }
+            return lesAbsences;
         }
 
     }
