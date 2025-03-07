@@ -78,6 +78,7 @@
             this.BtnPersEnregistrer.TabIndex = 61;
             this.BtnPersEnregistrer.Text = "Enregistrer";
             this.BtnPersEnregistrer.UseVisualStyleBackColor = true;
+            this.BtnPersEnregistrer.Click += new System.EventHandler(this.BtnPersEnregistrer_Click);
             // 
             // TxtBoxPrenom2
             // 

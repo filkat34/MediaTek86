@@ -48,7 +48,6 @@ namespace MediaTek86
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnAddPersonnel = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.BtnPersEnregistrer = new System.Windows.Forms.Button();
             this.BtnSupprAbs = new System.Windows.Forms.Button();
             this.BtnAbsModif = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -226,7 +225,6 @@ namespace MediaTek86
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.BtnModifier);
             this.groupBox3.Controls.Add(this.TxtBoxNom);
-            this.groupBox3.Controls.Add(this.BtnPersEnregistrer);
             this.groupBox3.Controls.Add(this.TxtBoxPrenom);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.CBoxService);
@@ -261,16 +259,6 @@ namespace MediaTek86
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 41;
             this.pictureBox2.TabStop = false;
-            // 
-            // BtnPersEnregistrer
-            // 
-            this.BtnPersEnregistrer.Location = new System.Drawing.Point(247, 208);
-            this.BtnPersEnregistrer.Name = "BtnPersEnregistrer";
-            this.BtnPersEnregistrer.Size = new System.Drawing.Size(117, 23);
-            this.BtnPersEnregistrer.TabIndex = 6;
-            this.BtnPersEnregistrer.Text = "Enregistrer";
-            this.BtnPersEnregistrer.UseVisualStyleBackColor = true;
-            this.BtnPersEnregistrer.Click += new System.EventHandler(this.BtnPersEnregistrer_Click);
             // 
             // BtnSupprAbs
             // 
@@ -440,7 +428,7 @@ namespace MediaTek86
             // 
             this.ModPersonnel.Location = new System.Drawing.Point(138, 208);
             this.ModPersonnel.Name = "ModPersonnel";
-            this.ModPersonnel.Size = new System.Drawing.Size(87, 23);
+            this.ModPersonnel.Size = new System.Drawing.Size(110, 23);
             this.ModPersonnel.TabIndex = 43;
             this.ModPersonnel.Text = "Modifier";
             this.ModPersonnel.UseVisualStyleBackColor = true;
@@ -504,7 +492,6 @@ namespace MediaTek86
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateAbsFin;
         private System.Windows.Forms.DateTimePicker dateAbsDeb;
-        private System.Windows.Forms.Button BtnPersEnregistrer;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DateTimePicker TimeAbsDeb;

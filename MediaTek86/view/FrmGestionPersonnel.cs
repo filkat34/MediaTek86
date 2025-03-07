@@ -206,15 +206,23 @@ namespace MediaTek86
             }
         }
 
+
         private void ModPersonnel_Click(object sender, EventArgs e)
         {
-            Form modPersonnel = new ModPersonnel();
+            Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+            String nom = personnel.Nom;
+            String prenom = personnel.Prenom;
+            String tel = personnel.Tel;
+            String mail = personnel.Mail;
+            int service = CBoxService.FindStringExact(personnel.Service.Nom);
+            Form modPersonnel = new ModPersonnel(nom, prenom, tel, mail, service);
             modPersonnel.Owner = this;
             enCoursDeModifResponsable = true;
-            
+
             if (modPersonnel.ShowDialog() == DialogResult.OK)
             {
                 RemplirListePersonnels();
+                enCoursDeModifResponsable = false;
             }
         }
     }
