@@ -241,6 +241,7 @@
             this.BtnPersEnregistrer.TabIndex = 22;
             this.BtnPersEnregistrer.Text = "Enregistrer";
             this.BtnPersEnregistrer.UseVisualStyleBackColor = true;
+            this.BtnPersEnregistrer.Click += new System.EventHandler(this.BtnPersEnregistrer_Click);
             // 
             // BtnSupprAbs
             // 
@@ -265,9 +266,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.GridViewAbsences);
-            this.groupBox4.Location = new System.Drawing.Point(548, 12);
+            this.groupBox4.Location = new System.Drawing.Point(550, 185);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(485, 476);
+            this.groupBox4.Size = new System.Drawing.Size(485, 482);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Absences";
@@ -278,7 +279,7 @@
             this.GridViewAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewAbsences.Location = new System.Drawing.Point(11, 19);
             this.GridViewAbsences.Name = "GridViewAbsences";
-            this.GridViewAbsences.Size = new System.Drawing.Size(468, 451);
+            this.GridViewAbsences.Size = new System.Drawing.Size(468, 457);
             this.GridViewAbsences.TabIndex = 0;
             // 
             // groupBox6
@@ -293,7 +294,7 @@
             this.groupBox6.Controls.Add(this.daTimeAbsFin);
             this.groupBox6.Controls.Add(this.BtnAbsEnregistrer);
             this.groupBox6.Controls.Add(this.daTimeAbsDeb);
-            this.groupBox6.Location = new System.Drawing.Point(548, 494);
+            this.groupBox6.Location = new System.Drawing.Point(551, 12);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(485, 167);
             this.groupBox6.TabIndex = 32;
