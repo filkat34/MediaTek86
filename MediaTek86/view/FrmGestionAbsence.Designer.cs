@@ -31,13 +31,13 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.GridViewAbsences = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CloseFrmGestAbs = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnAddAbsence = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbIdPersonnel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CloseFrmGestAbs = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAbsences)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -81,13 +81,23 @@
             this.groupBox1.Controls.Add(this.CloseFrmGestAbs);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.BtnAddAbsence);
             this.groupBox1.Location = new System.Drawing.Point(18, 596);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(544, 53);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestion des absences";
+            // 
+            // CloseFrmGestAbs
+            // 
+            this.CloseFrmGestAbs.Location = new System.Drawing.Point(420, 24);
+            this.CloseFrmGestAbs.Name = "CloseFrmGestAbs";
+            this.CloseFrmGestAbs.Size = new System.Drawing.Size(103, 23);
+            this.CloseFrmGestAbs.TabIndex = 3;
+            this.CloseFrmGestAbs.Text = "Fermer";
+            this.CloseFrmGestAbs.UseVisualStyleBackColor = true;
+            this.CloseFrmGestAbs.Click += new System.EventHandler(this.CloseFrmGestAbs_Click);
             // 
             // button3
             // 
@@ -107,14 +117,15 @@
             this.button2.Text = "Supprimer";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BtnAddAbsence
             // 
-            this.button1.Location = new System.Drawing.Point(8, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnAddAbsence.Location = new System.Drawing.Point(8, 24);
+            this.BtnAddAbsence.Name = "BtnAddAbsence";
+            this.BtnAddAbsence.Size = new System.Drawing.Size(103, 23);
+            this.BtnAddAbsence.TabIndex = 0;
+            this.BtnAddAbsence.Text = "Ajouter";
+            this.BtnAddAbsence.UseVisualStyleBackColor = true;
+            this.BtnAddAbsence.Click += new System.EventHandler(this.BtnAddAbsence_Click);
             // 
             // groupBox2
             // 
@@ -147,16 +158,6 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "Identité :";
             // 
-            // CloseFrmGestAbs
-            // 
-            this.CloseFrmGestAbs.Location = new System.Drawing.Point(420, 24);
-            this.CloseFrmGestAbs.Name = "CloseFrmGestAbs";
-            this.CloseFrmGestAbs.Size = new System.Drawing.Size(103, 23);
-            this.CloseFrmGestAbs.TabIndex = 3;
-            this.CloseFrmGestAbs.Text = "Fermer";
-            this.CloseFrmGestAbs.UseVisualStyleBackColor = true;
-            this.CloseFrmGestAbs.Click += new System.EventHandler(this.CloseFrmGestAbs_Click);
-            // 
             // FrmGestionAbsence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +189,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnAddAbsence;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbIdPersonnel;

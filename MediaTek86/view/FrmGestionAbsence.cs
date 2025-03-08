@@ -25,7 +25,7 @@ namespace MediaTek86.view
         public int idpersonnelencoursdemodif;
 
         private BindingSource bdgAbsences = new BindingSource();
-        
+
 
         public FrmGestionAbsence(int idpersonnel, String nom, String prenom, String tel, String mail, Service service)
         {
@@ -53,14 +53,19 @@ namespace MediaTek86.view
             GridViewAbsences.Columns["idmotif"].Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CloseFrmGestAbs_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnAddAbsence_Click(object sender, EventArgs e)
+        {
+            Form addAbsence = new FrmAddAbsence();
+            addAbsence.Owner = this;
+            if (addAbsence.ShowDialog() == DialogResult.OK)
+            {
+                RemplirListeAbsences(idpersonnelencoursdemodif);
+            }
         }
     }
 }

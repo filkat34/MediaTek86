@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaTek86.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace MediaTek86.view
         public FrmAddAbsence()
         {
             InitializeComponent();
+            controller = new FrmGestionPersonnelController();
         }
+
+        /// <summary>
+        /// Controleur de la fenêtre
+        /// </summary>
+        private FrmGestionPersonnelController controller;
     }
 }

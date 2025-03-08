@@ -67,5 +67,10 @@ namespace MediaTek86.controller
             return responsableAccess.GetLesAbsences();
         }
 
+        public void AddAbsence(Absence absence)
+        {
+            responsableAccess.AddAbsence(absence);
+        }
+
     }
 }
