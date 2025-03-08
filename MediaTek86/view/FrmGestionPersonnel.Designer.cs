@@ -33,21 +33,10 @@ namespace MediaTek86
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionPersonnel));
             this.dataGridPersonnels = new System.Windows.Forms.DataGridView();
             this.BtnPersSupprimer = new System.Windows.Forms.Button();
-            this.BtnModifier = new System.Windows.Forms.Button();
-            this.TxtBoxNom = new System.Windows.Forms.TextBox();
-            this.TxtBoxPrenom = new System.Windows.Forms.TextBox();
-            this.TextBoxTel = new System.Windows.Forms.TextBox();
-            this.TextBoxMail = new System.Windows.Forms.TextBox();
-            this.CBoxService = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ModPersonnel = new System.Windows.Forms.Button();
             this.BtnAddPersonnel = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.BtnSupprAbs = new System.Windows.Forms.Button();
             this.BtnAbsModif = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -63,11 +52,10 @@ namespace MediaTek86
             this.dateAbsFin = new System.Windows.Forms.DateTimePicker();
             this.BtnAbsEnregistrer = new System.Windows.Forms.Button();
             this.dateAbsDeb = new System.Windows.Forms.DateTimePicker();
-            this.ModPersonnel = new System.Windows.Forms.Button();
+            this.BtnShowAbsences = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPersonnels)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAbsences)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -92,173 +80,62 @@ namespace MediaTek86
             this.dataGridPersonnels.RowTemplate.ReadOnly = true;
             this.dataGridPersonnels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPersonnels.ShowEditingIcon = false;
-            this.dataGridPersonnels.Size = new System.Drawing.Size(503, 387);
+            this.dataGridPersonnels.Size = new System.Drawing.Size(509, 561);
             this.dataGridPersonnels.TabIndex = 0;
             this.dataGridPersonnels.TabStop = false;
             // 
             // BtnPersSupprimer
             // 
-            this.BtnPersSupprimer.Location = new System.Drawing.Point(384, 208);
+            this.BtnPersSupprimer.Location = new System.Drawing.Point(257, 23);
             this.BtnPersSupprimer.Name = "BtnPersSupprimer";
             this.BtnPersSupprimer.Size = new System.Drawing.Size(117, 23);
-            this.BtnPersSupprimer.TabIndex = 8;
+            this.BtnPersSupprimer.TabIndex = 3;
             this.BtnPersSupprimer.Text = "Supprimer";
             this.BtnPersSupprimer.UseVisualStyleBackColor = true;
             this.BtnPersSupprimer.Click += new System.EventHandler(this.BtnPersSupprimer_Click);
             // 
-            // BtnModifier
-            // 
-            this.BtnModifier.Location = new System.Drawing.Point(6, 162);
-            this.BtnModifier.Name = "BtnModifier";
-            this.BtnModifier.Size = new System.Drawing.Size(117, 23);
-            this.BtnModifier.TabIndex = 7;
-            this.BtnModifier.Text = "Modifier (ancien)";
-            this.BtnModifier.UseVisualStyleBackColor = true;
-            this.BtnModifier.Click += new System.EventHandler(this.BtnModifier_Click);
-            // 
-            // TxtBoxNom
-            // 
-            this.TxtBoxNom.Enabled = false;
-            this.TxtBoxNom.Location = new System.Drawing.Point(202, 17);
-            this.TxtBoxNom.Name = "TxtBoxNom";
-            this.TxtBoxNom.Size = new System.Drawing.Size(288, 20);
-            this.TxtBoxNom.TabIndex = 0;
-            // 
-            // TxtBoxPrenom
-            // 
-            this.TxtBoxPrenom.Enabled = false;
-            this.TxtBoxPrenom.Location = new System.Drawing.Point(202, 53);
-            this.TxtBoxPrenom.Name = "TxtBoxPrenom";
-            this.TxtBoxPrenom.Size = new System.Drawing.Size(288, 20);
-            this.TxtBoxPrenom.TabIndex = 2;
-            // 
-            // TextBoxTel
-            // 
-            this.TextBoxTel.Enabled = false;
-            this.TextBoxTel.Location = new System.Drawing.Point(202, 90);
-            this.TextBoxTel.Name = "TextBoxTel";
-            this.TextBoxTel.Size = new System.Drawing.Size(288, 20);
-            this.TextBoxTel.TabIndex = 3;
-            // 
-            // TextBoxMail
-            // 
-            this.TextBoxMail.Enabled = false;
-            this.TextBoxMail.Location = new System.Drawing.Point(202, 129);
-            this.TextBoxMail.Name = "TextBoxMail";
-            this.TextBoxMail.Size = new System.Drawing.Size(288, 20);
-            this.TextBoxMail.TabIndex = 4;
-            // 
-            // CBoxService
-            // 
-            this.CBoxService.Enabled = false;
-            this.CBoxService.FormattingEnabled = true;
-            this.CBoxService.Items.AddRange(new object[] {
-            "prêt",
-            "administratif",
-            "médiation culturelle"});
-            this.CBoxService.Location = new System.Drawing.Point(202, 169);
-            this.CBoxService.Name = "CBoxService";
-            this.CBoxService.Size = new System.Drawing.Size(288, 21);
-            this.CBoxService.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Service";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(167, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Mail";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Téléphone";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Prénom";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(164, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Nom";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridPersonnels);
-            this.groupBox2.Location = new System.Drawing.Point(8, 255);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(524, 412);
+            this.groupBox2.Size = new System.Drawing.Size(533, 586);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Liste des personnels";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BtnShowAbsences);
             this.groupBox3.Controls.Add(this.ModPersonnel);
             this.groupBox3.Controls.Add(this.BtnAddPersonnel);
-            this.groupBox3.Controls.Add(this.pictureBox2);
             this.groupBox3.Controls.Add(this.BtnPersSupprimer);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.BtnModifier);
-            this.groupBox3.Controls.Add(this.TxtBoxNom);
-            this.groupBox3.Controls.Add(this.TxtBoxPrenom);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.CBoxService);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.TextBoxMail);
-            this.groupBox3.Controls.Add(this.TextBoxTel);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(12, 12);
+            this.groupBox3.Location = new System.Drawing.Point(12, 604);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(520, 237);
+            this.groupBox3.Size = new System.Drawing.Size(524, 57);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gestion du personnel";
             // 
+            // ModPersonnel
+            // 
+            this.ModPersonnel.Location = new System.Drawing.Point(129, 23);
+            this.ModPersonnel.Name = "ModPersonnel";
+            this.ModPersonnel.Size = new System.Drawing.Size(110, 23);
+            this.ModPersonnel.TabIndex = 2;
+            this.ModPersonnel.Text = "Modifier";
+            this.ModPersonnel.UseVisualStyleBackColor = true;
+            this.ModPersonnel.Click += new System.EventHandler(this.ModPersonnel_Click);
+            // 
             // BtnAddPersonnel
             // 
-            this.BtnAddPersonnel.Location = new System.Drawing.Point(6, 208);
+            this.BtnAddPersonnel.Location = new System.Drawing.Point(6, 23);
             this.BtnAddPersonnel.Name = "BtnAddPersonnel";
             this.BtnAddPersonnel.Size = new System.Drawing.Size(107, 23);
-            this.BtnAddPersonnel.TabIndex = 42;
+            this.BtnAddPersonnel.TabIndex = 1;
             this.BtnAddPersonnel.Text = "Ajouter";
             this.BtnAddPersonnel.UseVisualStyleBackColor = true;
             this.BtnAddPersonnel.Click += new System.EventHandler(this.BtnAddPersonnel_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 116);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 41;
-            this.pictureBox2.TabStop = false;
             // 
             // BtnSupprAbs
             // 
@@ -424,15 +301,14 @@ namespace MediaTek86
             this.dateAbsDeb.TabIndex = 9;
             this.dateAbsDeb.Value = new System.DateTime(2025, 3, 25, 23, 59, 59, 0);
             // 
-            // ModPersonnel
+            // BtnShowAbsences
             // 
-            this.ModPersonnel.Location = new System.Drawing.Point(138, 208);
-            this.ModPersonnel.Name = "ModPersonnel";
-            this.ModPersonnel.Size = new System.Drawing.Size(110, 23);
-            this.ModPersonnel.TabIndex = 43;
-            this.ModPersonnel.Text = "Modifier";
-            this.ModPersonnel.UseVisualStyleBackColor = true;
-            this.ModPersonnel.Click += new System.EventHandler(this.ModPersonnel_Click);
+            this.BtnShowAbsences.Location = new System.Drawing.Point(392, 23);
+            this.BtnShowAbsences.Name = "BtnShowAbsences";
+            this.BtnShowAbsences.Size = new System.Drawing.Size(117, 23);
+            this.BtnShowAbsences.TabIndex = 4;
+            this.BtnShowAbsences.Text = "Absences";
+            this.BtnShowAbsences.UseVisualStyleBackColor = true;
             // 
             // FrmGestionPersonnel
             // 
@@ -440,8 +316,8 @@ namespace MediaTek86
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 678);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1061, 718);
@@ -452,8 +328,6 @@ namespace MediaTek86
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPersonnels)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAbsences)).EndInit();
             this.groupBox6.ResumeLayout(false);
@@ -467,17 +341,6 @@ namespace MediaTek86
 
         private System.Windows.Forms.DataGridView dataGridPersonnels;
         private System.Windows.Forms.Button BtnPersSupprimer;
-        private System.Windows.Forms.Button BtnModifier;
-        private System.Windows.Forms.TextBox TxtBoxNom;
-        private System.Windows.Forms.TextBox TxtBoxPrenom;
-        private System.Windows.Forms.TextBox TextBoxTel;
-        private System.Windows.Forms.TextBox TextBoxMail;
-        private System.Windows.Forms.ComboBox CBoxService;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button BtnSupprAbs;
@@ -492,12 +355,12 @@ namespace MediaTek86
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateAbsFin;
         private System.Windows.Forms.DateTimePicker dateAbsDeb;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DateTimePicker TimeAbsDeb;
         private DateTimePicker TimeAbsFin;
         private Button BtnAddPersonnel;
         private Button ModPersonnel;
+        private Button BtnShowAbsences;
     }
 }
 

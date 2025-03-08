@@ -35,10 +35,10 @@ namespace MediaTek86.controller
             return responsableAccess.GetLesPersonnels();
         }
 
-        // <summary>
+        /// <summary>
         /// Demande d'ajout d'un personnel
-        /// </summary>
         /// <param name="personnel">objet personnel à ajouter</param>
+        /// </summary>
         public void AddPersonnel(Personnel personnel)
         {
             responsableAccess.AddPersonnel(personnel);
@@ -53,10 +53,10 @@ namespace MediaTek86.controller
             responsableAccess.UpdatePersonnel(personnel);
         }
 
-        // <summary>
+        /// <summary>
         /// Demande de suppression d'un personnel
         /// </summary>
-        /// <param name="personnel">objet developpeur à supprimer</param>
+        /// <param name="personnel">objet personnel à supprimer</param>
         public void DelPersonnel(Personnel personnel)
         {
             responsableAccess.DelPersonnel(personnel);

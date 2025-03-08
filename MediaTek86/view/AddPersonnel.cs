@@ -16,6 +16,9 @@ namespace MediaTek86.view
 {
     public partial class AddPersonnel : Form
     {
+        /// <summary>
+        /// Initialisation de la fenêtre d'ajout du personnel
+        /// </summary>
         public AddPersonnel()
         {
             InitializeComponent();
@@ -28,7 +31,11 @@ namespace MediaTek86.view
         private FrmGestionPersonnelController controller;
 
 
-
+        /// <summary>
+        /// Demande d'ajout du personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPersEnregistrer_Click(object sender, EventArgs e)
         {
             if (!TxtBoxNom1.Text.Equals("") && !TxtBoxPrenom1.Text.Equals("") && !TextBoxTel1.Text.Equals("") && !TextBoxMail1.Text.Equals("") && CBoxService1.SelectedIndex != -1)
@@ -58,5 +65,4 @@ namespace MediaTek86.view
         }
         
     }
-    
 }

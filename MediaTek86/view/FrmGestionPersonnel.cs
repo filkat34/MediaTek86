@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,9 @@ namespace MediaTek86
         /// </summary>
         private FrmGestionPersonnelController controller;
         
+        /// <summary>
+        /// Initialisation de la fenêtre de gestion du personnel
+        /// </summary>
         public FrmGestionPersonnel()
         {
             InitializeComponent();
@@ -54,8 +58,9 @@ namespace MediaTek86
             RemplirListePersonnels();
             RemplirListeAbsences();
         }
+
         /// <summary>
-        /// Affiche les personnels
+        /// Affiche la liste des personnels
         /// </summary>
         private void RemplirListePersonnels()
         {
@@ -66,7 +71,7 @@ namespace MediaTek86
         }
 
         /// <summary>
-        /// Affiche les absences
+        /// Affiche la liste des absences
         /// </summary>
         private void RemplirListeAbsences()
         {
@@ -76,91 +81,7 @@ namespace MediaTek86
         }
 
         /// <summary>
-        /// Demande d'enregistrement de l'ajout ou de la modification d'un personnel
-        /// </summary>
-        /// <param name="personnel"></param>
-        private void BtnPersEnregistrer_Click(object sender, EventArgs e)
-        {
-            if (!TxtBoxNom.Text.Equals("") && !TxtBoxPrenom.Text.Equals("") && !TextBoxTel.Text.Equals("") && !TextBoxMail.Text.Equals("") && CBoxService.SelectedIndex != -1)
-            {
-                if (enCoursDeModifResponsable)
-                {
-                    Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
-                    personnel.Nom = TxtBoxNom.Text;
-                    personnel.Prenom = TxtBoxPrenom.Text;
-                    personnel.Tel = TextBoxTel.Text;
-                    personnel.Mail = TextBoxMail.Text;
-                    String nomservice = CBoxService.SelectedItem.ToString();
-                    int idservice = 1;
-                    if (nomservice == "médiation culturelle")
-                    {
-                        idservice = 2;
-                    }
-                    if (nomservice == "prêt")
-                    {
-                        idservice = 3;
-                    }
-                    Service service = new Service(idservice, nomservice);
-                    personnel.Service = service;
-                    if (MessageBox.Show("Voulez-vous apporter des modifications à " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de modification", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        controller.UpdatePersonnel(personnel);
-                        EffaceChampsPersonnel();
-                    }
-                    controller.UpdatePersonnel(personnel);
-                    EffaceChampsPersonnel();
-                }
-                else
-                {
-                    String nomservice = CBoxService.SelectedItem.ToString();
-                    int idservice = 1;
-                    if (nomservice == "médiation culturelle")
-                    {
-                        idservice = 2;
-                    }
-                    if (nomservice == "prêt")
-                    {
-                        idservice = 3;
-                    }
-                    Service service = new Service(idservice, nomservice);
-                    Personnel personnel = new Personnel(0, TxtBoxNom.Text, TxtBoxPrenom.Text, TextBoxTel.Text, TextBoxMail.Text, service);
-                    controller.AddPersonnel(personnel);
-                    EffaceChampsPersonnel();
-                }
-                RemplirListePersonnels();
-                enCoursDeModifResponsable = false;
-            }
-            else
-            {
-                MessageBox.Show("Tous les champs doivent être remplis.", "Information");
-            }
-        }
-
-        /// <summary>
-        ///  Demande de modification d'un personnel
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnModifier_Click(object sender, EventArgs e)
-        {
-            if (dataGridPersonnels.SelectedRows.Count > 0)
-            {
-                enCoursDeModifResponsable = true;
-                Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
-                TxtBoxNom.Text = personnel.Nom;
-                TxtBoxPrenom.Text = personnel.Prenom;
-                TextBoxTel.Text = personnel.Tel;
-                TextBoxMail.Text = personnel.Mail;
-                CBoxService.SelectedIndex = CBoxService.FindStringExact(personnel.Service.Nom);
-            }
-            else
-            {
-                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
-            }
-        }
-
-        /// <summary>
-        /// Demande de suppression d'un développeur
+        /// Demande de suppression d'un personnel
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -179,23 +100,13 @@ namespace MediaTek86
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
-
         }
 
-        public void EffaceChampsPersonnel()
-        {
-            TxtBoxNom.Clear(); 
-            TxtBoxPrenom.Clear();
-            TextBoxTel.Clear();
-            TextBoxMail.Clear();
-            CBoxService.SelectedIndex = -1;
-        }
-
-        private void EffacChampsPerso_Click(object sender, EventArgs e)
-        {
-            EffaceChampsPersonnel();
-        }
-
+        /// <summary>
+        /// Demande d'ajout d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddPersonnel_Click(object sender, EventArgs e)
         { 
             Form addPersonnel = new AddPersonnel();
@@ -206,20 +117,25 @@ namespace MediaTek86
             }
         }
 
-
+        /// <summary>
+        /// Demande de modification d'un développeur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ModPersonnel_Click(object sender, EventArgs e)
         {
             Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+            int idpersonnel = personnel.Idpersonnel;
             String nom = personnel.Nom;
             String prenom = personnel.Prenom;
             String tel = personnel.Tel;
             String mail = personnel.Mail;
-            int service = CBoxService.FindStringExact(personnel.Service.Nom);
-            Form modPersonnel = new ModPersonnel(nom, prenom, tel, mail, service);
+            Service service = personnel.Service;
+            Form modPersonnel = new ModPersonnel(idpersonnel, nom, prenom, tel, mail, service);
             modPersonnel.Owner = this;
             enCoursDeModifResponsable = true;
 
-            if (modPersonnel.ShowDialog() == DialogResult.OK)
+            if (modPersonnel.ShowDialog() == DialogResult.Yes)
             {
                 RemplirListePersonnels();
                 enCoursDeModifResponsable = false;
