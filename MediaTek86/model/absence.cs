@@ -15,16 +15,19 @@ namespace MediaTek86.model
         /// <param name="datefin"></param>
         /// /// <param name="personnel"></param>
         /// <param name="motif"></param>
-        public Absence(DateTime datedebut, DateTime datefin, Motif motif, Personnel personnel)
+        public Absence(int idpersonnel, DateTime datedebut, DateTime datefin, int idmotif, String libelle)
         {
+            this.Idpersonnel = idpersonnel;
             this.Datedebut = datedebut;
             this.Datefin = datefin;
-            this.Personnel = personnel;
-            this.Motif = motif;
+            this.IdMotif = idmotif;
+            this.Libelle = libelle;
         }
+        public int Idpersonnel { get; set; }
         public DateTime Datedebut { get; set; }
         public DateTime Datefin { get; set; }
-        public Personnel Personnel {get; set;}
-        public Motif Motif { get; set;}
+        public int IdMotif { get; set; }
+        public String Libelle {  get; set; }
+
     }
 }

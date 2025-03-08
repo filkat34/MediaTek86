@@ -14,12 +14,12 @@ using System.Runtime.CompilerServices;
 
 namespace MediaTek86.view
 {
-    public partial class AddPersonnel : Form
+    public partial class FrmAddPersonnel : Form
     {
         /// <summary>
         /// Initialisation de la fenêtre d'ajout du personnel
         /// </summary>
-        public AddPersonnel()
+        public FrmAddPersonnel()
         {
             InitializeComponent();
             controller = new FrmGestionPersonnelController();

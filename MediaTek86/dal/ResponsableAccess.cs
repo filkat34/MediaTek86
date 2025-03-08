@@ -171,20 +171,13 @@ namespace MediaTek86.dal
 
         public List<Absence> GetLesAbsences()
         {
+
             List<Absence> lesAbsences = new List<Absence>();
             if (access.Manager != null)
             {
-                string req = "select absence.datedebut, absence.datefin, motif.idmotif, motif.libelle, ";
-                req += "personnel.idpersonnel, personnel.nom, personnel.prenom, personnel.tel, ";
-                req += "personnel.mail, personnel.idservice, service.nom ";
-                req += "from personnel join service on (personnel.idservice = service.idservice) ";
-                req += "join absence on (personnel.idpersonnel = absence.idpersonnel) ";
-                req += "join motif on (absence.idmotif = motif.idmotif) ";
-                req += "order by absence.datedebut DESC;";
-
-                //string req = "select absence.datedebut, absence.datefin, motif.idmotif, motif.libelle ";
-                //req += "from absence join motif on (absence.idmotif = motif.idmotif) ";
-                //req += "order by absence.datedebut;";
+                string req = "select absence.idpersonnel, absence.datedebut, absence.datefin, absence.idmotif, motif.libelle ";
+                req += "from absence join motif on (absence.idmotif = motif.idmotif) ";
+                req += "order by datedebut DESC;";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -192,11 +185,7 @@ namespace MediaTek86.dal
                     {
                         foreach (Object[] record in records)
                         {
-                            Service service = new Service((int)record[9], (string)record[10]);
-                            Personnel personnel = new Personnel((int)record[4], (string)record[5], (string)record[6],
-                                (string)record[7], (string)record[8], service);
-                            Motif motif = new Motif((int)record[2], (string)record[3]);
-                            Absence absence = new Absence((DateTime)record[0], (DateTime)record[1], motif, personnel);
+                            Absence absence = new Absence((int) record[0], (DateTime)record[1], (DateTime)record[2], (int) record[3], (String) record[4]);
                             lesAbsences.Add(absence);
                         }
                     }

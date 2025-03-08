@@ -56,7 +56,6 @@ namespace MediaTek86
         {
             controller = new FrmGestionPersonnelController();
             RemplirListePersonnels();
-            RemplirListeAbsences();
         }
 
         /// <summary>
@@ -68,16 +67,6 @@ namespace MediaTek86
             bdgPersonnels.DataSource = lesPersonnels;
             dataGridPersonnels.DataSource = bdgPersonnels;
             dataGridPersonnels.Columns["idpersonnel"].Visible = false;
-        }
-
-        /// <summary>
-        /// Affiche la liste des absences
-        /// </summary>
-        private void RemplirListeAbsences()
-        {
-            List<Absence> lesAbsences = controller.GetLesAbsences();
-            bdgAbsences.DataSource = lesAbsences;
-            GridViewAbsences.DataSource = bdgAbsences;
         }
 
         /// <summary>
@@ -109,7 +98,7 @@ namespace MediaTek86
         /// <param name="e"></param>
         private void BtnAddPersonnel_Click(object sender, EventArgs e)
         { 
-            Form addPersonnel = new AddPersonnel();
+            Form addPersonnel = new FrmAddPersonnel();
             addPersonnel.Owner = this;
             if (addPersonnel.ShowDialog() == DialogResult.OK)
             {
@@ -131,7 +120,7 @@ namespace MediaTek86
             String tel = personnel.Tel;
             String mail = personnel.Mail;
             Service service = personnel.Service;
-            Form modPersonnel = new ModPersonnel(idpersonnel, nom, prenom, tel, mail, service);
+            Form modPersonnel = new FrmModPersonnel(idpersonnel, nom, prenom, tel, mail, service);
             modPersonnel.Owner = this;
             enCoursDeModifResponsable = true;
 
@@ -141,6 +130,28 @@ namespace MediaTek86
                 enCoursDeModifResponsable = false;
             }
         }
+
+        private void BtnShowAbsences_Click(object sender, EventArgs e)
+        {
+            if (dataGridPersonnels.SelectedRows.Count > 0)
+            {
+                Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+                int idpersonnel = personnel.Idpersonnel;
+                String nom = personnel.Nom;
+                String prenom = personnel.Prenom;
+                String tel = personnel.Tel;
+                String mail = personnel.Mail;
+                Service service = personnel.Service;
+                Form afficheabsences = new FrmGestionAbsence(idpersonnel, nom, prenom, tel, mail, service);
+                afficheabsences.Owner = this;
+                afficheabsences.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
     }
+    
 }
 

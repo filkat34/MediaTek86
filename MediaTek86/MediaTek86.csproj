@@ -62,17 +62,29 @@
     <Compile Include="model\personnel.cs" />
     <Compile Include="model\responsable.cs" />
     <Compile Include="model\service.cs" />
-    <Compile Include="view\AddPersonnel.cs">
+    <Compile Include="view\FrmAddAbsence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\AddPersonnel.Designer.cs">
-      <DependentUpon>AddPersonnel.cs</DependentUpon>
+    <Compile Include="view\FrmAddAbsence.Designer.cs">
+      <DependentUpon>FrmAddAbsence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmAddPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmAddPersonnel.Designer.cs">
+      <DependentUpon>FrmAddPersonnel.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FrmAuthentification.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\FrmAuthentification.Designer.cs">
       <DependentUpon>FrmAuthentification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmGestionAbsence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmGestionAbsence.Designer.cs">
+      <DependentUpon>FrmGestionAbsence.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FrmGestionPersonnel.cs">
       <SubType>Form</SubType>
@@ -82,17 +94,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\ModPersonnel.cs">
+    <Compile Include="view\FrmModAbsence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\ModPersonnel.Designer.cs">
-      <DependentUpon>ModPersonnel.cs</DependentUpon>
+    <Compile Include="view\FrmModAbsence.Designer.cs">
+      <DependentUpon>FrmModAbsence.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\AddPersonnel.resx">
-      <DependentUpon>AddPersonnel.cs</DependentUpon>
+    <Compile Include="view\FrmModPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmModPersonnel.Designer.cs">
+      <DependentUpon>FrmModPersonnel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\FrmAddAbsence.resx">
+      <DependentUpon>FrmAddAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmAddPersonnel.resx">
+      <DependentUpon>FrmAddPersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmAuthentification.resx">
       <DependentUpon>FrmAuthentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmGestionAbsence.resx">
+      <DependentUpon>FrmGestionAbsence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmGestionPersonnel.resx">
       <DependentUpon>FrmGestionPersonnel.cs</DependentUpon>
@@ -106,8 +130,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\ModPersonnel.resx">
-      <DependentUpon>ModPersonnel.cs</DependentUpon>
+    <EmbeddedResource Include="view\FrmModAbsence.resx">
+      <DependentUpon>FrmModAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmModPersonnel.resx">
+      <DependentUpon>FrmModPersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\MediaTek86.exe.config" />
     <None Include="Properties\Settings.settings">

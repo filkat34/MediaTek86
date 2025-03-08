@@ -14,7 +14,7 @@ using System.Collections;
 
 namespace MediaTek86.view
 {
-    public partial class ModPersonnel : Form
+    public partial class FrmModPersonnel : Form
     {
         /// <summary>
         /// Controleur de la fenêtre
@@ -40,7 +40,7 @@ namespace MediaTek86.view
         /// <param name="tel"></param>
         /// <param name="mail"></param>
         /// <param name="service"></param>
-        public ModPersonnel(int idpersonnel, String nom, String prenom, String tel, String mail, Service service)
+        public FrmModPersonnel(int idpersonnel, String nom, String prenom, String tel, String mail, Service service)
         {
             InitializeComponent();
             controller = new FrmGestionPersonnelController();
