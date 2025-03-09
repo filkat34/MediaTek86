@@ -31,7 +31,7 @@ namespace MediaTek86.view
         {
             InitializeComponent();
             controller = new FrmGestionPersonnelController();
-            int idpersonnelencoursdemodif = idpersonnel;
+            idpersonnelencoursdemodif = idpersonnel;
             lbIdPersonnel.Text = prenom + " " + nom.ToUpper() + " " + "(" + service + ")";
             RemplirListeAbsences(idpersonnelencoursdemodif);
         }
@@ -60,7 +60,7 @@ namespace MediaTek86.view
 
         private void BtnAddAbsence_Click(object sender, EventArgs e)
         {
-            Form addAbsence = new FrmAddAbsence();
+            Form addAbsence = new FrmAddAbsence(idpersonnelencoursdemodif);
             addAbsence.Owner = this;
             if (addAbsence.ShowDialog() == DialogResult.OK)
             {

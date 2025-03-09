@@ -48,7 +48,7 @@
             this.TimeAbsFin.Location = new System.Drawing.Point(417, 61);
             this.TimeAbsFin.Name = "TimeAbsFin";
             this.TimeAbsFin.ShowUpDown = true;
-            this.TimeAbsFin.Size = new System.Drawing.Size(63, 20);
+            this.TimeAbsFin.Size = new System.Drawing.Size(64, 20);
             this.TimeAbsFin.TabIndex = 44;
             // 
             // TimeAbsDeb
@@ -57,7 +57,7 @@
             this.TimeAbsDeb.Location = new System.Drawing.Point(417, 19);
             this.TimeAbsDeb.Name = "TimeAbsDeb";
             this.TimeAbsDeb.ShowUpDown = true;
-            this.TimeAbsDeb.Size = new System.Drawing.Size(63, 20);
+            this.TimeAbsDeb.Size = new System.Drawing.Size(64, 20);
             this.TimeAbsDeb.TabIndex = 42;
             // 
             // pictureBox1
@@ -126,9 +126,11 @@
             this.BtnAbsEnregistrer.TabIndex = 46;
             this.BtnAbsEnregistrer.Text = "Enregistrer";
             this.BtnAbsEnregistrer.UseVisualStyleBackColor = true;
+            this.BtnAbsEnregistrer.Click += new System.EventHandler(this.BtnAbsEnregistrer_Click);
             // 
             // dateAbsDeb
             // 
+            this.dateAbsDeb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateAbsDeb.Location = new System.Drawing.Point(222, 19);
             this.dateAbsDeb.Name = "dateAbsDeb";
             this.dateAbsDeb.Size = new System.Drawing.Size(178, 20);

@@ -71,6 +71,5 @@ namespace MediaTek86.controller
         {
             responsableAccess.AddAbsence(absence);
         }
-
     }
 }
