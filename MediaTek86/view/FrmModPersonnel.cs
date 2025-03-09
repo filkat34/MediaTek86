@@ -14,6 +14,9 @@ using System.Collections;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenâtre de modification d'un personnel
+    /// </summary>
     public partial class FrmModPersonnel : Form
     {
         /// <summary>
@@ -32,7 +35,10 @@ namespace MediaTek86.view
         public int idpersonnelencoursdemodif;
 
         /// <summary>
-        /// Initialisation de la fenêtre de modification du personnel avec des données issues de la fenêtre de gestion du personnel
+        /// Initialisation de la fenêtre de modification du personnel et de son contrôleur
+        /// Remplissage des champs avec les informations du personnel
+        /// Sauvegarde du personnel avant modification pour affichage lors de la confirmation de modification
+        /// Création d'un objet personnel pour sauvegarder les modifications apportées au personnel
         /// </summary>
         /// <param name="idpersonnel"></param>
         /// <param name="nom"></param>
@@ -50,11 +56,7 @@ namespace MediaTek86.view
             TextBoxTel2.Text = tel;
             TextBoxMail2.Text = mail;
             CBoxService2.SelectedIndex = CBoxService2.FindStringExact(service.Nom);
-            
-            ///Sauvegarde du personnel avant modification pour affichage lors de la confirmation de modification
             personnelEnCoursdeModif.Add(new Personnel(idpersonnelencoursdemodif, nom, prenom, tel, mail, service));
-
-            ///Création d'un objet personnel pour sauvegarder les modifications apportées
             personnelEnCoursdeModif.Add(new Personnel(idpersonnelencoursdemodif, nom, prenom, tel, mail, service));
         }
 

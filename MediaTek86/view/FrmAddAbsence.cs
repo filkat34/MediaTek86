@@ -13,6 +13,9 @@ using System.Windows.Forms.Design;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenêtre d'ajout d'absence
+    /// </summary>
     public partial class FrmAddAbsence : Form
     {
         /// <summary>
@@ -20,6 +23,10 @@ namespace MediaTek86.view
         /// </summary>
         public int idpersonnelencoursdemodif;
 
+        /// <summary>
+        /// Initialisation de la fenêtre d'ajout d'absence
+        /// </summary>
+        /// <param name="idpersonnel"></param>
         public FrmAddAbsence(int idpersonnel)
         {
             InitializeComponent();
@@ -32,6 +39,11 @@ namespace MediaTek86.view
         /// </summary>
         private FrmGestionPersonnelController controller;
 
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAbsEnregistrer_Click(object sender, EventArgs e)
         {
             if (CBoxMotifAbs.SelectedIndex != -1 && !(dateAbsDeb.Value.Date > dateAbsFin.Value.Date))
@@ -61,7 +73,7 @@ namespace MediaTek86.view
             }
             else
             {
-                MessageBox.Show("Tous les champs doivent être remplis et la date de début doit être inférieure à la date de fin", "Information");
+                MessageBox.Show("Tous les champs doivent être remplis et la date de début doit être inférieure à la date de fin.", "Information");
             }
         }
     }

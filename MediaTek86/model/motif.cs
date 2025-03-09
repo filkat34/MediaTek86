@@ -18,9 +18,21 @@ namespace MediaTek86.model
             this.IdMotif = idmotif;
             this.Libelle = libelle;
         }
+
+        /// <summary>
+        /// Getter de IdMotif
+        /// </summary>
         public int IdMotif { get; }
+
+        /// <summary>
+        /// Getter de Libelle
+        /// </summary>
         public String Libelle { get; set; }
 
+        /// <summary>
+        /// Paramètre d'affichage de l'objet motif
+        /// </summary>
+        /// <returns>motif</returns>
         public override string ToString()
         {
             return this.Libelle;

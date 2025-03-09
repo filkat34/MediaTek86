@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenêtre de gestion des absences du personnel
+    /// </summary>
     public partial class FrmGestionAbsence : Form
     {
         /// <summary>
@@ -29,9 +32,20 @@ namespace MediaTek86.view
         /// </summary>
         public int idpersonnelencoursdemodif;
 
+        /// <summary>
+        /// Objet pour gérer la liste des absences
+        /// </summary>
         private BindingSource bdgAbsences = new BindingSource();
 
-
+        /// <summary>
+        /// Initialisation de la fenêtre et du contrôleur
+        /// </summary>
+        /// <param name="idpersonnel"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="tel"></param>
+        /// <param name="mail"></param>
+        /// <param name="service"></param>
         public FrmGestionAbsence(int idpersonnel, String nom, String prenom, String tel, String mail, Service service)
         {
             InitializeComponent();
@@ -41,6 +55,10 @@ namespace MediaTek86.view
             RemplirListeAbsences(idpersonnelencoursdemodif);
         }
 
+        /// <summary>
+        /// Affiche la liste des absences
+        /// </summary>
+        /// <param name="idpersonnel"></param>
         private void RemplirListeAbsences(int idpersonnel)
         {
             List<Absence> lesAbsences = controller.GetLesAbsences();
@@ -54,15 +72,28 @@ namespace MediaTek86.view
             }
             bdgAbsences.DataSource = absencesPersonnel;
             GridViewAbsences.DataSource = bdgAbsences;
+            GridViewAbsences.Columns[1].HeaderText = "Début";
+            GridViewAbsences.Columns[2].HeaderText = "Fin";
+            GridViewAbsences.Columns[4].HeaderText = "Motif";
             GridViewAbsences.Columns["idpersonnel"].Visible = false;
             GridViewAbsences.Columns["idmotif"].Visible = false;
         }
 
+        /// <summary>
+        /// Ferme la fenêtre de gestion des absences
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseFrmGestAbs_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddAbsence_Click(object sender, EventArgs e)
         {
             Form addAbsence = new FrmAddAbsence(idpersonnelencoursdemodif);
@@ -73,6 +104,11 @@ namespace MediaTek86.view
             }
         }
 
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSupprAbsence_Click(object sender, EventArgs e)
         {
             if (GridViewAbsences.SelectedRows.Count > 0)
@@ -90,6 +126,11 @@ namespace MediaTek86.view
             }
         }
 
+        /// <summary>
+        /// Demande de modification d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAbsModif_Click(object sender, EventArgs e)
         {
             Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];

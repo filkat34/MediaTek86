@@ -5,6 +5,9 @@ using MediaTek86.controller;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenêtre de connexion
+    /// </summary>
     public partial class FrmAuthentification : Form
     {
         /// <summary>
@@ -32,11 +35,10 @@ namespace MediaTek86.view
         }
 
         /// <summary>
-        /// Demande au controleur de controler l'authentification
+        /// Demande au controleur de contrôler l'authentification
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void BtnConnexion_Click_1(object sender, EventArgs e)
         {
             String login = TxtBoxLogin.Text;

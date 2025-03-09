@@ -28,9 +28,8 @@ namespace MediaTek86.dal
         /// <summary>
         /// Controle si l'utilisateur a le droit de se connecter en tant que "responsable"
         /// </summary>
-        /// <param name="login"></param>
-        /// <param name="pwd"></param>
-        /// <returns>vrai si l'utilisateur a le profil "responsable"</returns>
+        /// <param name="admin"></param>
+        /// <returns></returns>
         public Boolean ControleAuthentification(Admin admin)
         {
             if (access.Manager != null)
@@ -93,6 +92,10 @@ namespace MediaTek86.dal
             return lesPersonnels;
         }
 
+        /// <summary>
+        /// Demande d'ajout d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void AddPersonnel(Personnel personnel)
         {
             if (access.Manager != null)
@@ -157,9 +160,14 @@ namespace MediaTek86.dal
                 string req = "delete from personnel where idpersonnel = @idpersonnel;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idpersonnel", personnel.Idpersonnel);
+
+                string req1 = "delete from absence where idpersonnel = @idpersonnel;";
+                Dictionary<string, object> parameters1 = new Dictionary<string, object>();
+                parameters1.Add("@idpersonnel", personnel.Idpersonnel);
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
+                    access.Manager.ReqUpdate(req1, parameters1);
                 }
                 catch (Exception e)
                 {
@@ -168,6 +176,11 @@ namespace MediaTek86.dal
                 }
             }
         }
+
+        /// <summary>
+        /// Récupère et retourne les absences
+        /// </summary>
+        /// <returns>liste des absences</returns>
         public List<Absence> GetLesAbsences()
         {
 
@@ -197,6 +210,11 @@ namespace MediaTek86.dal
             }
             return lesAbsences;
         }
+
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
         public void AddAbsence(Absence absence)
         {
             if (access.Manager != null)
@@ -219,6 +237,11 @@ namespace MediaTek86.dal
                 }
             }
         }
+
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
         public void SupprAbsence(Absence absence)
         {
             if (access.Manager != null)
@@ -239,6 +262,11 @@ namespace MediaTek86.dal
             }
         }
 
+        /// <summary>
+        /// Demande de modification d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
+        /// <param name="AncienneDateDebut"></param>
         public void UpdateAbsence(Absence absence, DateTime AncienneDateDebut)
         {
             if (access.Manager != null)

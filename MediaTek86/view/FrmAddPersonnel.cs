@@ -14,6 +14,9 @@ using System.Runtime.CompilerServices;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenêtre d'ajout d'un personnel
+    /// </summary>
     public partial class FrmAddPersonnel : Form
     {
         /// <summary>

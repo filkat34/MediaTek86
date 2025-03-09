@@ -15,6 +15,9 @@ using MediaTek86.view;
 
 namespace MediaTek86
 {
+    /// <summary>
+    /// Fenêtre de gestion du personnel
+    /// </summary>
     public partial class FrmGestionPersonnel : Form
     {
         /// <summary>
@@ -26,13 +29,6 @@ namespace MediaTek86
         /// Objet pour gérer la liste des personnels
         /// </summary>
         private BindingSource bdgPersonnels = new BindingSource();
-        /// <summary>
-
-        /// <summary>
-        /// Objet pour gérer la liste des absences
-        /// </summary>
-        private BindingSource bdgAbsences = new BindingSource();
-        /// <summary>
 
         /// <summary>
         /// Controleur de la fenêtre
@@ -48,7 +44,7 @@ namespace MediaTek86
             Init();
         }
 
-        // <summary>
+        /// <summary>
         /// Initialisations :
         /// Création du controleur et remplissage des listes
         /// </summary>
@@ -107,7 +103,7 @@ namespace MediaTek86
         }
 
         /// <summary>
-        /// Demande de modification d'un développeur
+        /// Demande de modification d'un personnel
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -131,6 +127,11 @@ namespace MediaTek86
             }
         }
 
+        /// <summary>
+        /// Affiche les absences du personnel sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnShowAbsences_Click(object sender, EventArgs e)
         {
             if (dataGridPersonnels.SelectedRows.Count > 0)

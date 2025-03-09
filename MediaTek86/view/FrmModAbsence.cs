@@ -12,6 +12,9 @@ using MediaTek86.model;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenêtre de modification d'une absence
+    /// </summary>
     public partial class FrmModAbsence : Form
     {
 
@@ -31,7 +34,16 @@ namespace MediaTek86.view
         /// </summary>
         public List<Absence> absEnCoursdeModif = new List<Absence>();
 
-
+        /// <summary>
+        /// Initialisation de la fenêtre et du contrôleur
+        /// Remplissage des champs avec les informations de l'absence en cours de modification
+        /// Sauvegarde de l'absence avant modification pour affichage lors de la confirmation de modification
+        /// </summary>
+        /// <param name="Idpersonnel"></param>
+        /// <param name="Datedebut"></param>
+        /// <param name="Datefin"></param>
+        /// <param name="IdMotif"></param>
+        /// <param name="Libelle"></param>
         public FrmModAbsence(int Idpersonnel, DateTime Datedebut, DateTime Datefin, int IdMotif, String Libelle)
         {
             InitializeComponent();
@@ -42,20 +54,20 @@ namespace MediaTek86.view
             dateAbsFin.Value = Datefin;
             TimeAbsFin.Value = Datefin;
             CBoxMotifAbs.SelectedIndex = CBoxMotifAbs.FindStringExact(Libelle);
-
-            ///Sauvegarde de l'absence avant modification pour affichage lors de la confirmation de modification
-            absEnCoursdeModif.Add(new Absence(Idpersonnel, Datedebut, Datefin, IdMotif, Libelle));
-
-            ///Création d'un objet absence pour sauvegarder les modifications apportées
             absEnCoursdeModif.Add(new Absence(Idpersonnel, Datedebut, Datefin, IdMotif, Libelle));
         }
 
+        /// <summary>
+        /// Demande d'enregistrement des modifications apportées à l'absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAbsEnregistrerModif_Click(object sender, EventArgs e)
         {
             if (CBoxMotifAbs.SelectedIndex != -1 && !(dateAbsDeb.Value.Date > dateAbsFin.Value.Date))
                 {
                     int Idpersonnel = idpersonnelencoursdemodif;
-                    DateTime AncienneDateDebut = absEnCoursdeModif[1].Datedebut;
+                    DateTime AncienneDateDebut = absEnCoursdeModif[0].Datedebut;
                     DateTime DatedeDebut = dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay;
                     DateTime DatedeFin = dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay;
                     String Libelle = CBoxMotifAbs.SelectedItem.ToString();
@@ -74,7 +86,7 @@ namespace MediaTek86.view
                     }
                     Absence absence = new Absence(Idpersonnel, DatedeDebut, DatedeFin, IdMotif, Libelle);
 
-                    if (MessageBox.Show("Voulez-vous apporter des modifications à l'absence du " + absEnCoursdeModif[1] + " ?", "Confirmation de modification", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Voulez-vous apporter des modifications à l'absence du " + absEnCoursdeModif[0] + " ?", "Confirmation de modification", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         DialogResult = DialogResult.Yes;
                         controller.UpdateAbsence(absence, AncienneDateDebut);
@@ -83,7 +95,7 @@ namespace MediaTek86.view
             }
             else
             {
-                MessageBox.Show("Tous les champs doivent être remplis et la date de début doit être inférieure à la date de fin", "Information");
+                MessageBox.Show("Tous les champs doivent être remplis et la date de début doit être inférieure à la date de fin.", "Information");
             }
         }
     }

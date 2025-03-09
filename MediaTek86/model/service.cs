@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.model
 {
+    /// <summary>
+    /// Classe pour mémoriser les services des personnels
+    /// </summary>
     public class Service
     {
         /// <summary>
@@ -18,13 +21,21 @@ namespace MediaTek86.model
             this.Idservice = idservice;
             this.Nom = nom;
         }
-        public int Idservice { get; }
+
+        /// <summary>
+        /// Getter et setter de Idservice
+        /// </summary>
+        public int Idservice { get; set; }
+
+        /// <summary>
+        /// Getter et setter de Nom
+        /// </summary>
         public String Nom { get; set; }
 
         /// <summary>
         /// Définit l'information à afficher (juste le nom)
         /// </summary>
-        /// <returns>nom du profil</returns>
+        /// <returns>nom du service</returns>
         public override string ToString()
         {
             return this.Nom;
