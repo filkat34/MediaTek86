@@ -31,13 +31,13 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.GridViewAbsences = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnSupprAbsence = new System.Windows.Forms.Button();
             this.CloseFrmGestAbs = new System.Windows.Forms.Button();
             this.BtnAbsModif = new System.Windows.Forms.Button();
             this.BtnAddAbsence = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbIdPersonnel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnSupprAbsence = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAbsences)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -89,9 +89,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestion des absences";
             // 
+            // BtnSupprAbsence
+            // 
+            this.BtnSupprAbsence.Location = new System.Drawing.Point(155, 24);
+            this.BtnSupprAbsence.Name = "BtnSupprAbsence";
+            this.BtnSupprAbsence.Size = new System.Drawing.Size(103, 23);
+            this.BtnSupprAbsence.TabIndex = 4;
+            this.BtnSupprAbsence.Text = "Supprimer";
+            this.BtnSupprAbsence.UseVisualStyleBackColor = true;
+            this.BtnSupprAbsence.Click += new System.EventHandler(this.BtnSupprAbsence_Click);
+            // 
             // CloseFrmGestAbs
             // 
-            this.CloseFrmGestAbs.Location = new System.Drawing.Point(420, 24);
+            this.CloseFrmGestAbs.Location = new System.Drawing.Point(427, 24);
             this.CloseFrmGestAbs.Name = "CloseFrmGestAbs";
             this.CloseFrmGestAbs.Size = new System.Drawing.Size(103, 23);
             this.CloseFrmGestAbs.TabIndex = 3;
@@ -101,7 +111,7 @@
             // 
             // BtnAbsModif
             // 
-            this.BtnAbsModif.Location = new System.Drawing.Point(288, 24);
+            this.BtnAbsModif.Location = new System.Drawing.Point(295, 24);
             this.BtnAbsModif.Name = "BtnAbsModif";
             this.BtnAbsModif.Size = new System.Drawing.Size(103, 23);
             this.BtnAbsModif.TabIndex = 2;
@@ -111,7 +121,7 @@
             // 
             // BtnAddAbsence
             // 
-            this.BtnAddAbsence.Location = new System.Drawing.Point(8, 24);
+            this.BtnAddAbsence.Location = new System.Drawing.Point(15, 24);
             this.BtnAddAbsence.Name = "BtnAddAbsence";
             this.BtnAddAbsence.Size = new System.Drawing.Size(103, 23);
             this.BtnAddAbsence.TabIndex = 0;
@@ -149,16 +159,6 @@
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 66;
             this.label1.Text = "Identité :";
-            // 
-            // BtnSupprAbsence
-            // 
-            this.BtnSupprAbsence.Location = new System.Drawing.Point(148, 24);
-            this.BtnSupprAbsence.Name = "BtnSupprAbsence";
-            this.BtnSupprAbsence.Size = new System.Drawing.Size(103, 23);
-            this.BtnSupprAbsence.TabIndex = 4;
-            this.BtnSupprAbsence.Text = "Supprimer";
-            this.BtnSupprAbsence.UseVisualStyleBackColor = true;
-            this.BtnSupprAbsence.Click += new System.EventHandler(this.BtnSupprAbsence_Click);
             // 
             // FrmGestionAbsence
             // 

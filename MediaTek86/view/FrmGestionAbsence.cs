@@ -18,11 +18,6 @@ namespace MediaTek86.view
     public partial class FrmGestionAbsence : Form
     {
         /// <summary>
-        /// Booléen pour savoir si une modification est demandée
-        /// </summary>
-        private Boolean enCoursDeModifResponsable = false;
-
-        /// <summary>
         /// Controleur de la fenêtre
         /// </summary>
         private FrmGestionPersonnelController controller;
@@ -141,12 +136,10 @@ namespace MediaTek86.view
             String Libelle = absence.Libelle;
             Form modAbsence = new FrmModAbsence(Idpersonnel, Datedebut, Datefin, IdMotif, Libelle);
             modAbsence.Owner = this;
-            enCoursDeModifResponsable = true;
 
             if (modAbsence.ShowDialog() == DialogResult.Yes)
             {
                 RemplirListeAbsences(idpersonnelencoursdemodif);
-                enCoursDeModifResponsable = false;
             }
         }
     }

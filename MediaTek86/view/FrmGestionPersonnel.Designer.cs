@@ -66,7 +66,7 @@ namespace MediaTek86
             // 
             // BtnPersSupprimer
             // 
-            this.BtnPersSupprimer.Location = new System.Drawing.Point(257, 23);
+            this.BtnPersSupprimer.Location = new System.Drawing.Point(267, 23);
             this.BtnPersSupprimer.Name = "BtnPersSupprimer";
             this.BtnPersSupprimer.Size = new System.Drawing.Size(117, 23);
             this.BtnPersSupprimer.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace MediaTek86
             // 
             // BtnShowAbsences
             // 
-            this.BtnShowAbsences.Location = new System.Drawing.Point(392, 23);
+            this.BtnShowAbsences.Location = new System.Drawing.Point(402, 23);
             this.BtnShowAbsences.Name = "BtnShowAbsences";
             this.BtnShowAbsences.Size = new System.Drawing.Size(117, 23);
             this.BtnShowAbsences.TabIndex = 4;
@@ -109,7 +109,7 @@ namespace MediaTek86
             // 
             // ModPersonnel
             // 
-            this.ModPersonnel.Location = new System.Drawing.Point(129, 23);
+            this.ModPersonnel.Location = new System.Drawing.Point(139, 23);
             this.ModPersonnel.Name = "ModPersonnel";
             this.ModPersonnel.Size = new System.Drawing.Size(110, 23);
             this.ModPersonnel.TabIndex = 2;
@@ -119,7 +119,7 @@ namespace MediaTek86
             // 
             // BtnAddPersonnel
             // 
-            this.BtnAddPersonnel.Location = new System.Drawing.Point(6, 23);
+            this.BtnAddPersonnel.Location = new System.Drawing.Point(16, 23);
             this.BtnAddPersonnel.Name = "BtnAddPersonnel";
             this.BtnAddPersonnel.Size = new System.Drawing.Size(107, 23);
             this.BtnAddPersonnel.TabIndex = 1;
@@ -131,7 +131,7 @@ namespace MediaTek86
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 678);
+            this.ClientSize = new System.Drawing.Size(552, 679);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;

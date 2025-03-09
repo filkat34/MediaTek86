@@ -21,11 +21,6 @@ namespace MediaTek86
     public partial class FrmGestionPersonnel : Form
     {
         /// <summary>
-        /// Booléen pour savoir si une modification est demandée
-        /// </summary>
-        private Boolean enCoursDeModifResponsable = false;
-
-        /// <summary>
         /// Objet pour gérer la liste des personnels
         /// </summary>
         private BindingSource bdgPersonnels = new BindingSource();
@@ -75,7 +70,7 @@ namespace MediaTek86
             if (dataGridPersonnels.SelectedRows.Count > 0)
             {
                 Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
-                if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom.ToUpper() + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     controller.DelPersonnel(personnel);
                     RemplirListePersonnels();
@@ -118,12 +113,10 @@ namespace MediaTek86
             Service service = personnel.Service;
             Form modPersonnel = new FrmModPersonnel(idpersonnel, nom, prenom, tel, mail, service);
             modPersonnel.Owner = this;
-            enCoursDeModifResponsable = true;
 
             if (modPersonnel.ShowDialog() == DialogResult.Yes)
             {
                 RemplirListePersonnels();
-                enCoursDeModifResponsable = false;
             }
         }
 
