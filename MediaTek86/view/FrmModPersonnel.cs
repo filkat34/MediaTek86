@@ -22,7 +22,7 @@ namespace MediaTek86.view
         private FrmGestionPersonnelController controller;
 
         /// <summary>
-        /// Création d'une liste pour sauvegarder les informations originelles du personnel en cours de modification
+        /// Création d'une liste pour sauvegarder les informations du personnel en cours de modification
         /// </summary>
         public List<Personnel> personnelEnCoursdeModif = new List<Personnel>();
 
@@ -44,7 +44,7 @@ namespace MediaTek86.view
         {
             InitializeComponent();
             controller = new FrmGestionPersonnelController();
-            int idpersonnelencoursdemodif = idpersonnel;
+            idpersonnelencoursdemodif = idpersonnel;
             TxtBoxNom2.Text = nom ;
             TxtBoxPrenom2.Text = prenom;
             TextBoxTel2.Text = tel;

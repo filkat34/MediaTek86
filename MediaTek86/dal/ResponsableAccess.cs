@@ -168,7 +168,6 @@ namespace MediaTek86.dal
                 }
             }
         }
-
         public List<Absence> GetLesAbsences()
         {
 
@@ -198,7 +197,6 @@ namespace MediaTek86.dal
             }
             return lesAbsences;
         }
-
         public void AddAbsence(Absence absence)
         {
             if (access.Manager != null)
@@ -208,6 +206,49 @@ namespace MediaTek86.dal
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("idpersonnel", absence.Idpersonnel);
                 parameters.Add("@datedebut", absence.Datedebut);
+                parameters.Add("@datefin", absence.Datefin);
+                parameters.Add("@idmotif", absence.IdMotif);
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+        public void SupprAbsence(Absence absence)
+        {
+            if (access.Manager != null)
+            {
+                string req = "delete from absence where idpersonnel = @idpersonnel AND datedebut = @DateDebut;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idpersonnel", absence.Idpersonnel);
+                parameters.Add("@DateDebut", absence.Datedebut);
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        public void UpdateAbsence(Absence absence, DateTime AncienneDateDebut)
+        {
+            if (access.Manager != null)
+            {
+                string req = "update absence set datedebut = @datedebut, datefin = @datefin, idmotif =@idmotif ";
+                req += "where datedebut = @AncienneDateDebut AND idpersonnel = @idpersonnel;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idpersonnel", absence.Idpersonnel);
+                parameters.Add("@datedebut", absence.Datedebut);
+                parameters.Add("AncienneDateDebut", AncienneDateDebut);
                 parameters.Add("@datefin", absence.Datefin);
                 parameters.Add("@idmotif", absence.IdMotif);
                 try

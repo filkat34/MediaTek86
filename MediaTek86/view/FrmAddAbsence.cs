@@ -34,12 +34,12 @@ namespace MediaTek86.view
 
         private void BtnAbsEnregistrer_Click(object sender, EventArgs e)
         {
-            if (CBoxMotifAbs.SelectedIndex != -1)
+            if (CBoxMotifAbs.SelectedIndex != -1 && !(dateAbsDeb.Value.Date > dateAbsFin.Value.Date))
             {
                 {
                     int Idpersonnel = idpersonnelencoursdemodif;
-                    DateTime DatedeDebut = dateAbsDeb.Value;
-                    DateTime DatedeFin = dateAbsFin.Value;
+                    DateTime DatedeDebut = dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay;
+                    DateTime DatedeFin = dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay;
                     String Libelle = CBoxMotifAbs.SelectedItem.ToString();
                     int IdMotif = 1;
                     if (Libelle == "maladie")
@@ -61,7 +61,7 @@ namespace MediaTek86.view
             }
             else
             {
-                MessageBox.Show("Tous les champs doivent être remplis.", "Information");
+                MessageBox.Show("Tous les champs doivent être remplis et la date de début doit être inférieure à la date de fin", "Information");
             }
         }
     }

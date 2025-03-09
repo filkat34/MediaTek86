@@ -71,5 +71,15 @@ namespace MediaTek86.controller
         {
             responsableAccess.AddAbsence(absence);
         }
+
+        public void SupprAbsence(Absence absence)
+        {
+            responsableAccess.SupprAbsence(absence);
+        }
+
+        public void UpdateAbsence(Absence absence, DateTime anciennedate)
+        {
+            responsableAccess.UpdateAbsence(absence, anciennedate);
+        }
     }
 }

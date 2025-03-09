@@ -32,12 +32,12 @@
             this.GridViewAbsences = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CloseFrmGestAbs = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnAbsModif = new System.Windows.Forms.Button();
             this.BtnAddAbsence = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbIdPersonnel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnSupprAbsence = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAbsences)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -78,9 +78,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnSupprAbsence);
             this.groupBox1.Controls.Add(this.CloseFrmGestAbs);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.BtnAbsModif);
             this.groupBox1.Controls.Add(this.BtnAddAbsence);
             this.groupBox1.Location = new System.Drawing.Point(18, 596);
             this.groupBox1.Name = "groupBox1";
@@ -99,23 +99,15 @@
             this.CloseFrmGestAbs.UseVisualStyleBackColor = true;
             this.CloseFrmGestAbs.Click += new System.EventHandler(this.CloseFrmGestAbs_Click);
             // 
-            // button3
+            // BtnAbsModif
             // 
-            this.button3.Location = new System.Drawing.Point(288, 24);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Modifier";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(146, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Supprimer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnAbsModif.Location = new System.Drawing.Point(288, 24);
+            this.BtnAbsModif.Name = "BtnAbsModif";
+            this.BtnAbsModif.Size = new System.Drawing.Size(103, 23);
+            this.BtnAbsModif.TabIndex = 2;
+            this.BtnAbsModif.Text = "Modifier";
+            this.BtnAbsModif.UseVisualStyleBackColor = true;
+            this.BtnAbsModif.Click += new System.EventHandler(this.BtnAbsModif_Click);
             // 
             // BtnAddAbsence
             // 
@@ -158,11 +150,21 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "Identité :";
             // 
+            // BtnSupprAbsence
+            // 
+            this.BtnSupprAbsence.Location = new System.Drawing.Point(148, 24);
+            this.BtnSupprAbsence.Name = "BtnSupprAbsence";
+            this.BtnSupprAbsence.Size = new System.Drawing.Size(103, 23);
+            this.BtnSupprAbsence.TabIndex = 4;
+            this.BtnSupprAbsence.Text = "Supprimer";
+            this.BtnSupprAbsence.UseVisualStyleBackColor = true;
+            this.BtnSupprAbsence.Click += new System.EventHandler(this.BtnSupprAbsence_Click);
+            // 
             // FrmGestionAbsence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 661);
+            this.ClientSize = new System.Drawing.Size(572, 662);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
@@ -187,12 +189,12 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView GridViewAbsences;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnAbsModif;
         private System.Windows.Forms.Button BtnAddAbsence;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbIdPersonnel;
         private System.Windows.Forms.Button CloseFrmGestAbs;
+        private System.Windows.Forms.Button BtnSupprAbsence;
     }
 }

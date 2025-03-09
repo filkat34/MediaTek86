@@ -1,4 +1,6 @@
-﻿namespace MediaTek86.view
+﻿using System.Windows.Forms;
+
+namespace MediaTek86.view
 {
     partial class FrmAddAbsence
     {
@@ -44,21 +46,23 @@
             // 
             // TimeAbsFin
             // 
-            this.TimeAbsFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeAbsFin.CustomFormat = "HH:mm";
+            this.TimeAbsFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimeAbsFin.Location = new System.Drawing.Point(417, 61);
             this.TimeAbsFin.Name = "TimeAbsFin";
             this.TimeAbsFin.ShowUpDown = true;
-            this.TimeAbsFin.Size = new System.Drawing.Size(64, 20);
-            this.TimeAbsFin.TabIndex = 44;
+            this.TimeAbsFin.Size = new System.Drawing.Size(51, 20);
+            this.TimeAbsFin.TabIndex = 4;
             // 
             // TimeAbsDeb
             // 
-            this.TimeAbsDeb.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeAbsDeb.CustomFormat = "HH:mm";
+            this.TimeAbsDeb.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimeAbsDeb.Location = new System.Drawing.Point(417, 19);
             this.TimeAbsDeb.Name = "TimeAbsDeb";
             this.TimeAbsDeb.ShowUpDown = true;
-            this.TimeAbsDeb.Size = new System.Drawing.Size(64, 20);
-            this.TimeAbsDeb.TabIndex = 42;
+            this.TimeAbsDeb.Size = new System.Drawing.Size(51, 20);
+            this.TimeAbsDeb.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -100,7 +104,7 @@
             this.CBoxMotifAbs.Location = new System.Drawing.Point(222, 96);
             this.CBoxMotifAbs.Name = "CBoxMotifAbs";
             this.CBoxMotifAbs.Size = new System.Drawing.Size(200, 21);
-            this.CBoxMotifAbs.TabIndex = 45;
+            this.CBoxMotifAbs.TabIndex = 5;
             // 
             // label6
             // 
@@ -116,14 +120,15 @@
             this.dateAbsFin.Location = new System.Drawing.Point(222, 61);
             this.dateAbsFin.Name = "dateAbsFin";
             this.dateAbsFin.Size = new System.Drawing.Size(178, 20);
-            this.dateAbsFin.TabIndex = 43;
+            this.dateAbsFin.TabIndex = 3;
+            this.dateAbsFin.Value = new System.DateTime(2025, 3, 9, 11, 19, 19, 0);
             // 
             // BtnAbsEnregistrer
             // 
-            this.BtnAbsEnregistrer.Location = new System.Drawing.Point(222, 140);
+            this.BtnAbsEnregistrer.Location = new System.Drawing.Point(238, 138);
             this.BtnAbsEnregistrer.Name = "BtnAbsEnregistrer";
             this.BtnAbsEnregistrer.Size = new System.Drawing.Size(88, 23);
-            this.BtnAbsEnregistrer.TabIndex = 46;
+            this.BtnAbsEnregistrer.TabIndex = 6;
             this.BtnAbsEnregistrer.Text = "Enregistrer";
             this.BtnAbsEnregistrer.UseVisualStyleBackColor = true;
             this.BtnAbsEnregistrer.Click += new System.EventHandler(this.BtnAbsEnregistrer_Click);
@@ -134,8 +139,8 @@
             this.dateAbsDeb.Location = new System.Drawing.Point(222, 19);
             this.dateAbsDeb.Name = "dateAbsDeb";
             this.dateAbsDeb.Size = new System.Drawing.Size(178, 20);
-            this.dateAbsDeb.TabIndex = 41;
-            this.dateAbsDeb.Value = new System.DateTime(2025, 3, 25, 23, 59, 59, 0);
+            this.dateAbsDeb.TabIndex = 1;
+            this.dateAbsDeb.Value = new System.DateTime(2025, 3, 9, 0, 0, 0, 0);
             // 
             // FrmAddAbsence
             // 
@@ -153,6 +158,7 @@
             this.Controls.Add(this.BtnAbsEnregistrer);
             this.Controls.Add(this.dateAbsDeb);
             this.Name = "FrmAddAbsence";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ajouter une absence";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

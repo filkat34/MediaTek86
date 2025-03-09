@@ -37,27 +37,29 @@
             this.CBoxMotifAbs = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateAbsFin = new System.Windows.Forms.DateTimePicker();
-            this.BtnAbsEnregistrer = new System.Windows.Forms.Button();
+            this.BtnAbsEnregistrerModif = new System.Windows.Forms.Button();
             this.dateAbsDeb = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TimeAbsFin
             // 
-            this.TimeAbsFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeAbsFin.CustomFormat = "HH:mm";
+            this.TimeAbsFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimeAbsFin.Location = new System.Drawing.Point(417, 62);
             this.TimeAbsFin.Name = "TimeAbsFin";
             this.TimeAbsFin.ShowUpDown = true;
-            this.TimeAbsFin.Size = new System.Drawing.Size(63, 20);
+            this.TimeAbsFin.Size = new System.Drawing.Size(52, 20);
             this.TimeAbsFin.TabIndex = 54;
             // 
             // TimeAbsDeb
             // 
-            this.TimeAbsDeb.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeAbsDeb.CustomFormat = "HH:mm";
+            this.TimeAbsDeb.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimeAbsDeb.Location = new System.Drawing.Point(417, 20);
             this.TimeAbsDeb.Name = "TimeAbsDeb";
             this.TimeAbsDeb.ShowUpDown = true;
-            this.TimeAbsDeb.Size = new System.Drawing.Size(63, 20);
+            this.TimeAbsDeb.Size = new System.Drawing.Size(52, 20);
             this.TimeAbsDeb.TabIndex = 52;
             // 
             // pictureBox1
@@ -118,14 +120,15 @@
             this.dateAbsFin.Size = new System.Drawing.Size(178, 20);
             this.dateAbsFin.TabIndex = 53;
             // 
-            // BtnAbsEnregistrer
+            // BtnAbsEnregistrerModif
             // 
-            this.BtnAbsEnregistrer.Location = new System.Drawing.Point(222, 141);
-            this.BtnAbsEnregistrer.Name = "BtnAbsEnregistrer";
-            this.BtnAbsEnregistrer.Size = new System.Drawing.Size(88, 23);
-            this.BtnAbsEnregistrer.TabIndex = 56;
-            this.BtnAbsEnregistrer.Text = "Enregistrer";
-            this.BtnAbsEnregistrer.UseVisualStyleBackColor = true;
+            this.BtnAbsEnregistrerModif.Location = new System.Drawing.Point(222, 135);
+            this.BtnAbsEnregistrerModif.Name = "BtnAbsEnregistrerModif";
+            this.BtnAbsEnregistrerModif.Size = new System.Drawing.Size(88, 23);
+            this.BtnAbsEnregistrerModif.TabIndex = 56;
+            this.BtnAbsEnregistrerModif.Text = "Enregistrer";
+            this.BtnAbsEnregistrerModif.UseVisualStyleBackColor = true;
+            this.BtnAbsEnregistrerModif.Click += new System.EventHandler(this.BtnAbsEnregistrerModif_Click);
             // 
             // dateAbsDeb
             // 
@@ -139,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 184);
+            this.ClientSize = new System.Drawing.Size(478, 179);
             this.Controls.Add(this.TimeAbsFin);
             this.Controls.Add(this.TimeAbsDeb);
             this.Controls.Add(this.pictureBox1);
@@ -148,9 +151,10 @@
             this.Controls.Add(this.CBoxMotifAbs);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateAbsFin);
-            this.Controls.Add(this.BtnAbsEnregistrer);
+            this.Controls.Add(this.BtnAbsEnregistrerModif);
             this.Controls.Add(this.dateAbsDeb);
             this.Name = "FrmModAbsence";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Modifier une absence";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -168,7 +172,7 @@
         private System.Windows.Forms.ComboBox CBoxMotifAbs;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateAbsFin;
-        private System.Windows.Forms.Button BtnAbsEnregistrer;
+        private System.Windows.Forms.Button BtnAbsEnregistrerModif;
         private System.Windows.Forms.DateTimePicker dateAbsDeb;
     }
 }

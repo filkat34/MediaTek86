@@ -15,6 +15,11 @@ namespace MediaTek86.view
     public partial class FrmGestionAbsence : Form
     {
         /// <summary>
+        /// Booléen pour savoir si une modification est demandée
+        /// </summary>
+        private Boolean enCoursDeModifResponsable = false;
+
+        /// <summary>
         /// Controleur de la fenêtre
         /// </summary>
         private FrmGestionPersonnelController controller;
@@ -65,6 +70,42 @@ namespace MediaTek86.view
             if (addAbsence.ShowDialog() == DialogResult.OK)
             {
                 RemplirListeAbsences(idpersonnelencoursdemodif);
+            }
+        }
+
+        private void BtnSupprAbsence_Click(object sender, EventArgs e)
+        {
+            if (GridViewAbsences.SelectedRows.Count > 0)
+            {
+                Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer l'absence au motif de " + absence.Libelle + " du " + absence.Datedebut + " au " + absence.Datefin + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.SupprAbsence(absence);
+                    RemplirListeAbsences(idpersonnelencoursdemodif);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+        private void BtnAbsModif_Click(object sender, EventArgs e)
+        {
+            Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+            int Idpersonnel = absence.Idpersonnel;
+            DateTime Datedebut = absence.Datedebut;
+            DateTime Datefin = absence.Datefin;
+            int IdMotif = absence.IdMotif;
+            String Libelle = absence.Libelle;
+            Form modAbsence = new FrmModAbsence(Idpersonnel, Datedebut, Datefin, IdMotif, Libelle);
+            modAbsence.Owner = this;
+            enCoursDeModifResponsable = true;
+
+            if (modAbsence.ShowDialog() == DialogResult.Yes)
+            {
+                RemplirListeAbsences(idpersonnelencoursdemodif);
+                enCoursDeModifResponsable = false;
             }
         }
     }
