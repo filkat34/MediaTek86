@@ -23,6 +23,10 @@ namespace MediaTek86.view
         /// </summary>
         private FrmGestionPersonnelController controller;
 
+        /// <summary>
+        /// Liste de contrôle de doublons pour les absences
+        /// </summary>
+        public List<Absence> absencesPersonnelControllist = new List<Absence>();
 
         /// <summary>
         /// Variable pour sauvegarder l'identifiant du personnel en cours de modification
@@ -44,10 +48,11 @@ namespace MediaTek86.view
         /// <param name="Datefin"></param>
         /// <param name="IdMotif"></param>
         /// <param name="Libelle"></param>
-        public FrmModAbsence(int Idpersonnel, DateTime Datedebut, DateTime Datefin, int IdMotif, String Libelle)
+        public FrmModAbsence(int Idpersonnel, DateTime Datedebut, DateTime Datefin, int IdMotif, String Libelle, List<Absence> absenceslistecontrol)
         {
             InitializeComponent();
             controller = new FrmGestionPersonnelController();
+            absencesPersonnelControllist = absenceslistecontrol;
             idpersonnelencoursdemodif = Idpersonnel;
             dateAbsDeb.Value = Datedebut;
             TimeAbsDeb.Value = Datedebut;
@@ -64,7 +69,7 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void BtnAbsEnregistrerModif_Click(object sender, EventArgs e)
         {
-            if (CBoxMotifAbs.SelectedIndex != -1 && !(dateAbsDeb.Value.Date > dateAbsFin.Value.Date))
+            if (CBoxMotifAbs.SelectedIndex != -1 && !(dateAbsDeb.Value > dateAbsFin.Value) && !(FrmGestionAbsence.GetChevauchementAbs(dateAbsDeb.Value, dateAbsFin.Value, absencesPersonnelControllist)))
                 {
                     int Idpersonnel = idpersonnelencoursdemodif;
                     DateTime AncienneDateDebut = absEnCoursdeModif[0].Datedebut;
@@ -93,9 +98,17 @@ namespace MediaTek86.view
                         absEnCoursdeModif.Clear();
                     }
             }
-            else
+            if (CBoxMotifAbs.SelectedIndex == -1)
             {
-                MessageBox.Show("Tous les champs doivent être remplis et la date de début doit être inférieure à la date de fin.", "Information");
+                MessageBox.Show("Tous les champs doivent être remplis.", "Information");
+            }
+            if (dateAbsDeb.Value > dateAbsFin.Value)
+            {
+                MessageBox.Show("La date de début doit être antérieure à la date de fin.", "Information");
+            }
+            if (FrmGestionAbsence.GetChevauchementAbs(dateAbsDeb.Value, dateAbsFin.Value, absencesPersonnelControllist))
+            {
+                MessageBox.Show("Une absence a déjà été programmée sur cette période.", "Information");
             }
         }
     }

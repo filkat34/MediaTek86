@@ -66,6 +66,5 @@ namespace MediaTek86.view
                 MessageBox.Show("Tous les champs doivent être remplis.", "Information");
             }
         }
-        
     }
 }

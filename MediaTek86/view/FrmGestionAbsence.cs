@@ -28,6 +28,11 @@ namespace MediaTek86.view
         public int idpersonnelencoursdemodif;
 
         /// <summary>
+        /// Doublon de la liste du personnel pour contrôle des chevauchements
+        /// </summary>
+        public List<Absence> absencesPersonnelControllist = new List<Absence>();
+
+        /// <summary>
         /// Objet pour gérer la liste des absences
         /// </summary>
         private BindingSource bdgAbsences = new BindingSource();
@@ -58,7 +63,7 @@ namespace MediaTek86.view
         {
             List<Absence> lesAbsences = controller.GetLesAbsences();
             List<Absence> absencesPersonnel = new List<Absence>();
-            foreach(Absence absence in lesAbsences)
+            foreach (Absence absence in lesAbsences)
             {
                 if (absence.Idpersonnel == idpersonnel)
                 {
@@ -66,6 +71,7 @@ namespace MediaTek86.view
                 }
             }
             bdgAbsences.DataSource = absencesPersonnel;
+            absencesPersonnelControllist = absencesPersonnel;
             GridViewAbsences.DataSource = bdgAbsences;
             GridViewAbsences.Columns[1].HeaderText = "Début";
             GridViewAbsences.Columns[2].HeaderText = "Fin";
@@ -91,7 +97,7 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void BtnAddAbsence_Click(object sender, EventArgs e)
         {
-            Form addAbsence = new FrmAddAbsence(idpersonnelencoursdemodif);
+            Form addAbsence = new FrmAddAbsence(idpersonnelencoursdemodif, absencesPersonnelControllist);
             addAbsence.Owner = this;
             if (addAbsence.ShowDialog() == DialogResult.OK)
             {
@@ -134,13 +140,45 @@ namespace MediaTek86.view
             DateTime Datefin = absence.Datefin;
             int IdMotif = absence.IdMotif;
             String Libelle = absence.Libelle;
-            Form modAbsence = new FrmModAbsence(Idpersonnel, Datedebut, Datefin, IdMotif, Libelle);
+            Form modAbsence = new FrmModAbsence(Idpersonnel, Datedebut, Datefin, IdMotif, Libelle, absencesPersonnelControllist);
             modAbsence.Owner = this;
 
             if (modAbsence.ShowDialog() == DialogResult.Yes)
             {
                 RemplirListeAbsences(idpersonnelencoursdemodif);
             }
+        }
+
+        /// <summary>
+        /// Contrôle si deux périodes d'absences se chevauchent
+        /// </summary>
+        /// <param name="datedebut1"></param>
+        /// <param name="datefin1"></param>
+        /// <param name="datedebut2"></param>
+        /// <param name="datefin2"></param>
+        /// <returns></returns>
+        public static bool ChevauchePeriode(DateTime datedebut1, DateTime datefin1, DateTime datedebut2, DateTime datefin2)
+        {
+            return datedebut1 <= datefin2 && datedebut2 <= datefin1;
+        }
+
+        /// <summary>
+        /// Contrôle si une période d'absence chevauche une autre période d'absence du personnel
+        /// </summary>
+        /// <param name="dateAbsdeb"></param>
+        /// <param name="dateAbsfin"></param>
+        /// <param name="absencesPersonnel"></param>
+        /// <returns></returns>
+        public static bool GetChevauchementAbs(DateTime dateAbsdeb, DateTime dateAbsfin, List<Absence> absencesPersonnel)
+        {
+            foreach (Absence absence in absencesPersonnel)
+            {
+                if (ChevauchePeriode(dateAbsdeb, dateAbsfin, absence.Datedebut, absence.Datefin))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

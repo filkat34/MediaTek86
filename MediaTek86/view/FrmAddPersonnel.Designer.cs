@@ -98,6 +98,7 @@
             // 
             // CBoxService1
             // 
+            this.CBoxService1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBoxService1.Items.AddRange(new object[] {
             "prêt",
             "administratif",
@@ -148,12 +149,12 @@
             this.label4.TabIndex = 53;
             this.label4.Text = "Mail";
             // 
-            // AddPersonnel
+            // FrmAddPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(509, 235);
+            this.ClientSize = new System.Drawing.Size(509, 236);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtBoxNom1);
@@ -169,7 +170,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(525, 275);
             this.MinimumSize = new System.Drawing.Size(525, 275);
-            this.Name = "AddPersonnel";
+            this.Name = "FrmAddPersonnel";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

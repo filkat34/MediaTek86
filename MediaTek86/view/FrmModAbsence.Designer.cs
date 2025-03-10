@@ -93,6 +93,7 @@
             // 
             // CBoxMotifAbs
             // 
+            this.CBoxMotifAbs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBoxMotifAbs.FormattingEnabled = true;
             this.CBoxMotifAbs.Items.AddRange(new object[] {
             "vacances",
