@@ -69,46 +69,51 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void BtnAbsEnregistrerModif_Click(object sender, EventArgs e)
         {
-            if (CBoxMotifAbs.SelectedIndex != -1 && !(dateAbsDeb.Value > dateAbsFin.Value) && !(FrmGestionAbsence.GetChevauchementAbs(dateAbsDeb.Value, dateAbsFin.Value, absencesPersonnelControllist)))
+            if (CBoxMotifAbs.SelectedIndex != -1 && !((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay) >= (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay)) && !(FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencesPersonnelControllist)))
+            {
+                int Idpersonnel = idpersonnelencoursdemodif;
+                DateTime AncienneDateDebut = absEnCoursdeModif[0].Datedebut;
+                DateTime DatedeDebut = dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay;
+                DateTime DatedeFin = dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay;
+                String Libelle = CBoxMotifAbs.SelectedItem.ToString();
+                int IdMotif = 1;
+                if (Libelle == "maladie")
                 {
-                    int Idpersonnel = idpersonnelencoursdemodif;
-                    DateTime AncienneDateDebut = absEnCoursdeModif[0].Datedebut;
-                    DateTime DatedeDebut = dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay;
-                    DateTime DatedeFin = dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay;
-                    String Libelle = CBoxMotifAbs.SelectedItem.ToString();
-                    int IdMotif = 1;
-                    if (Libelle == "maladie")
-                    {
-                        IdMotif = 2;
-                    }
-                    if (Libelle == "motif familial")
-                    {
-                        IdMotif = 3;
-                    }
-                    if (Libelle == "congé parental")
-                    {
-                        IdMotif = 4;
-                    }
-                    Absence absence = new Absence(Idpersonnel, DatedeDebut, DatedeFin, IdMotif, Libelle);
+                    IdMotif = 2;
+                }
+                if (Libelle == "motif familial")
+                {
+                    IdMotif = 3;
+                }
+                if (Libelle == "congé parental")
+                {
+                    IdMotif = 4;
+                }
+                Absence absence = new Absence(Idpersonnel, DatedeDebut, DatedeFin, IdMotif, Libelle);
 
-                    if (MessageBox.Show("Voulez-vous apporter des modifications à l'absence du " + absEnCoursdeModif[0] + " ?", "Confirmation de modification", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        DialogResult = DialogResult.Yes;
-                        controller.UpdateAbsence(absence, AncienneDateDebut);
-                        absEnCoursdeModif.Clear();
-                    }
+                if (MessageBox.Show("Voulez-vous apporter des modifications à l'absence du " + absEnCoursdeModif[0] + " ?", "Confirmation de modification", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    DialogResult = DialogResult.Yes;
+                    controller.UpdateAbsence(absence, AncienneDateDebut);
+                    absEnCoursdeModif.Clear();
+                }
             }
-            if (CBoxMotifAbs.SelectedIndex == -1)
+            if (CBoxMotifAbs.SelectedIndex == -1 || ((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay) >= (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay)) || FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencesPersonnelControllist))
             {
-                MessageBox.Show("Tous les champs doivent être remplis.", "Information");
-            }
-            if (dateAbsDeb.Value > dateAbsFin.Value)
-            {
-                MessageBox.Show("La date de début doit être antérieure à la date de fin.", "Information");
-            }
-            if (FrmGestionAbsence.GetChevauchementAbs(dateAbsDeb.Value, dateAbsFin.Value, absencesPersonnelControllist))
-            {
-                MessageBox.Show("Une absence a déjà été programmée sur cette période.", "Information");
+                String message = "";
+                if (CBoxMotifAbs.SelectedIndex == -1)
+                {
+                    message = "Tous les champs doivent être remplis. ";
+                }
+                if ((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay) >= (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay))
+                {
+                    message += "La date de début doit être antérieure à la date de fin. ";
+                }
+                if (FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencesPersonnelControllist))
+                {
+                    message += "Une absence a déjà été programmée sur cette période.";
+                }
+                MessageBox.Show(message, "Information");
             }
         }
     }

@@ -71,6 +71,7 @@ namespace MediaTek86.view
                 }
             }
             bdgAbsences.DataSource = absencesPersonnel;
+            absencesPersonnelControllist.Clear();
             absencesPersonnelControllist = absencesPersonnel;
             GridViewAbsences.DataSource = bdgAbsences;
             GridViewAbsences.Columns[1].HeaderText = "Début";
