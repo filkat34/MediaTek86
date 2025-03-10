@@ -24,7 +24,7 @@ namespace MediaTek86.view
         private FrmGestionPersonnelController controller;
 
         /// <summary>
-        /// Liste de contrôle de doublons pour les absences
+        /// Liste de contrôle sans l'absence en cours de modification
         /// </summary>
         public List<Absence> absencesPersonnelControllist = new List<Absence>();
 
@@ -53,6 +53,7 @@ namespace MediaTek86.view
             InitializeComponent();
             controller = new FrmGestionPersonnelController();
             absencesPersonnelControllist = absenceslistecontrol;
+            absencesPersonnelControllist.Remove(absencesPersonnelControllist.Find(abs => abs.Idpersonnel == Idpersonnel && abs.Datedebut == Datedebut && abs.Datefin == Datefin && abs.IdMotif == IdMotif && abs.Libelle == Libelle));
             idpersonnelencoursdemodif = Idpersonnel;
             dateAbsDeb.Value = Datedebut;
             TimeAbsDeb.Value = Datedebut;
