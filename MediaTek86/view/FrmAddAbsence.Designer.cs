@@ -158,6 +158,7 @@ namespace MediaTek86.view
             this.Controls.Add(this.dateAbsFin);
             this.Controls.Add(this.BtnAbsEnregistrer);
             this.Controls.Add(this.dateAbsDeb);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddAbsence";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ajouter une absence";

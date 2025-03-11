@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 236);
+            this.ClientSize = new System.Drawing.Size(509, 235);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtBoxNom2);
@@ -166,6 +166,7 @@
             this.Controls.Add(this.TextBoxTel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(525, 275);
             this.MinimumSize = new System.Drawing.Size(525, 275);

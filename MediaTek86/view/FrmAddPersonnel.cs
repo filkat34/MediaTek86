@@ -22,17 +22,22 @@ namespace MediaTek86.view
         /// <summary>
         /// Initialisation de la fenêtre d'ajout du personnel
         /// </summary>
-        public FrmAddPersonnel()
+        public FrmAddPersonnel(List <Personnel> personnels)
         {
             InitializeComponent();
             controller = new FrmGestionPersonnelController();
+            lespersonnels = personnels;
         }
 
         /// <summary>
         /// Controleur de la fenêtre
         /// </summary>
         private FrmGestionPersonnelController controller;
-
+        
+        /// <summary>
+        /// Liste des personnels
+        /// </summary>
+        List <Personnel> lespersonnels = new List <Personnel>();
 
         /// <summary>
         /// Demande d'ajout du personnel
@@ -56,9 +61,28 @@ namespace MediaTek86.view
                     }
                     Service service = new Service(idservice, nomservice);
                     Personnel personnel = new Personnel(0, TxtBoxNom1.Text, TxtBoxPrenom1.Text, TextBoxTel1.Text, TextBoxMail1.Text, service);
-                    controller.AddPersonnel(personnel);
+                    int compteurdoublon = 0;
+                    foreach (Personnel unpersonnel in lespersonnels)
+                    {
+                        if (unpersonnel.Nom.ToUpper() == TxtBoxNom1.Text.ToUpper() && unpersonnel.Prenom.ToUpper() == TxtBoxPrenom1.Text.ToUpper())
+                        {
+                            compteurdoublon++;
+                        }
+                    }
+                    if (compteurdoublon > 0)
+                    {
+                       if (MessageBox.Show("Un personnel ayant les mêmes nom et prénom est déjà présent dans la base. Voulez-vous vraiment ajouter " + personnel.Nom.ToUpper() + " " + personnel.Prenom + " ?", "Confirmation d'ajout", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            controller.AddPersonnel(personnel);
+                            DialogResult = DialogResult.OK;
+                        }
+                    }
+                    if (compteurdoublon == 0)
+                    {
+                        controller.AddPersonnel(personnel);
+                        DialogResult = DialogResult.OK;
+                    }
                 }
-                DialogResult = DialogResult.OK;
 
             }
             else

@@ -154,6 +154,7 @@
             this.Controls.Add(this.dateAbsFin);
             this.Controls.Add(this.BtnAbsEnregistrerModif);
             this.Controls.Add(this.dateAbsDeb);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmModAbsence";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Modifier une absence";

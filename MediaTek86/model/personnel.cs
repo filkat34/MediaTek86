@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.model
 {
+    /// <summary>
+    /// Classe pour mémoriser les informations sur les personnels
+    /// </summary>
     public class Personnel
     {/// <summary>
      /// Valorise les propriétés

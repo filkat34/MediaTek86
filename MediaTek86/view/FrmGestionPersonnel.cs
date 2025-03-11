@@ -29,6 +29,8 @@ namespace MediaTek86
         /// Controleur de la fenêtre
         /// </summary>
         private FrmGestionPersonnelController controller;
+
+        List<Personnel> lesPersonnels = new List<Personnel>();
         
         /// <summary>
         /// Initialisation de la fenêtre de gestion du personnel
@@ -54,7 +56,7 @@ namespace MediaTek86
         /// </summary>
         private void RemplirListePersonnels()
         {
-            List<Personnel> lesPersonnels = controller.GetLesPersonnels();
+            lesPersonnels = controller.GetLesPersonnels();
             bdgPersonnels.DataSource = lesPersonnels;
             dataGridPersonnels.DataSource = bdgPersonnels;
             dataGridPersonnels.Columns["idpersonnel"].Visible = false;
@@ -89,7 +91,7 @@ namespace MediaTek86
         /// <param name="e"></param>
         private void BtnAddPersonnel_Click(object sender, EventArgs e)
         { 
-            Form addPersonnel = new FrmAddPersonnel();
+            Form addPersonnel = new FrmAddPersonnel(lesPersonnels);
             addPersonnel.Owner = this;
             if (addPersonnel.ShowDialog() == DialogResult.OK)
             {

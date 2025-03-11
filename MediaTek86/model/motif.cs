@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.model
 {
+
+    /// <summary>
+    /// Classe pour mémoriser les motifs des absences
+    /// </summary>
     public class Motif
     {
         /// <summary>

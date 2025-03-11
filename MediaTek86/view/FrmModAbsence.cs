@@ -21,12 +21,18 @@ namespace MediaTek86.view
         /// <summary>
         /// Controleur de la fenêtre
         /// </summary>
-        private FrmGestionPersonnelController controller;
+        private readonly FrmGestionPersonnelController controller;
 
         /// <summary>
-        /// Liste de contrôle sans l'absence en cours de modification
+        /// Liste des absences pouvant être modifiées
         /// </summary>
-        public List<Absence> absencesPersonnelControllist = new List<Absence>();
+        public List<Absence> absencesamodifier = new List<Absence>();
+
+        /// <summary>
+        /// Liste des absences pouvant êtres modifier sans celle en cours de modification
+        /// pour éviter de déclecher l'alerte de chevauchement par rappory à l'absence déjà enregistrée
+        /// </summary>
+        public List<Absence> absencessansabsencoursdemodif = new List<Absence>();
 
         /// <summary>
         /// Variable pour sauvegarder l'identifiant du personnel en cours de modification
@@ -48,12 +54,17 @@ namespace MediaTek86.view
         /// <param name="Datefin"></param>
         /// <param name="IdMotif"></param>
         /// <param name="Libelle"></param>
+        /// <param name="absenceslistecontrol"></param>
         public FrmModAbsence(int Idpersonnel, DateTime Datedebut, DateTime Datefin, int IdMotif, String Libelle, List<Absence> absenceslistecontrol)
         {
             InitializeComponent();
             controller = new FrmGestionPersonnelController();
-            absencesPersonnelControllist = absenceslistecontrol;
-            absencesPersonnelControllist.Remove(absencesPersonnelControllist.Find(abs => abs.Idpersonnel == Idpersonnel && abs.Datedebut == Datedebut && abs.Datefin == Datefin && abs.IdMotif == IdMotif && abs.Libelle == Libelle));
+            absencesamodifier = absenceslistecontrol;
+            foreach (Absence absence in absenceslistecontrol)
+            {
+                absencessansabsencoursdemodif.Add(absence);
+            }
+            absencessansabsencoursdemodif.Remove(absencessansabsencoursdemodif.Find(abs => abs.Idpersonnel == Idpersonnel && abs.Datedebut == Datedebut && abs.Datefin == Datefin && abs.IdMotif == IdMotif && abs.Libelle == Libelle));
             idpersonnelencoursdemodif = Idpersonnel;
             dateAbsDeb.Value = Datedebut;
             TimeAbsDeb.Value = Datedebut;
@@ -70,7 +81,7 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void BtnAbsEnregistrerModif_Click(object sender, EventArgs e)
         {
-            if (CBoxMotifAbs.SelectedIndex != -1 && !((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay) >= (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay)) && !(FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencesPersonnelControllist)))
+            if (CBoxMotifAbs.SelectedIndex != -1 && !((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay) >= (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay)) && !(FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencessansabsencoursdemodif)))
             {
                 int Idpersonnel = idpersonnelencoursdemodif;
                 DateTime AncienneDateDebut = absEnCoursdeModif[0].Datedebut;
@@ -99,7 +110,7 @@ namespace MediaTek86.view
                     absEnCoursdeModif.Clear();
                 }
             }
-            if (CBoxMotifAbs.SelectedIndex == -1 || ((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay) >= (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay)) || FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencesPersonnelControllist))
+            if (CBoxMotifAbs.SelectedIndex == -1 || ((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay) >= (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay)) || FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencessansabsencoursdemodif))
             {
                 String message = "";
                 if (CBoxMotifAbs.SelectedIndex == -1)
@@ -110,7 +121,7 @@ namespace MediaTek86.view
                 {
                     message += "La date de début doit être antérieure à la date de fin. ";
                 }
-                if (FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencesPersonnelControllist))
+                if (FrmGestionAbsence.GetChevauchementAbs((dateAbsDeb.Value.Date + TimeAbsDeb.Value.TimeOfDay), (dateAbsFin.Value.Date + TimeAbsFin.Value.TimeOfDay), absencessansabsencoursdemodif))
                 {
                     message += "Une absence a déjà été programmée sur cette période.";
                 }

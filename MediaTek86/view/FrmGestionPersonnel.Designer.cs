@@ -30,6 +30,7 @@ namespace MediaTek86
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionPersonnel));
             this.dataGridPersonnels = new System.Windows.Forms.DataGridView();
             this.BtnPersSupprimer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -131,9 +132,10 @@ namespace MediaTek86
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 679);
+            this.ClientSize = new System.Drawing.Size(552, 678);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(568, 718);
             this.MinimumSize = new System.Drawing.Size(568, 718);
