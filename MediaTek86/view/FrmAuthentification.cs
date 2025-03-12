@@ -59,7 +59,7 @@ namespace MediaTek86.view
                 }
                 else
                 {
-                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas responsable", "Alerte");
+                    MessageBox.Show("Authentification incorrecte.", "Alerte");
                 }
             }
         }
