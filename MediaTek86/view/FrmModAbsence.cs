@@ -29,7 +29,7 @@ namespace MediaTek86.view
         public List<Absence> absencesamodifier = new List<Absence>();
 
         /// <summary>
-        /// Liste des absences pouvant êtres modifier sans celle en cours de modification
+        /// Liste des absences pouvant êtres modifiées sans celle en cours de modification
         /// pour éviter de déclecher l'alerte de chevauchement par rappory à l'absence déjà enregistrée
         /// </summary>
         public List<Absence> absencessansabsencoursdemodif = new List<Absence>();
@@ -48,6 +48,7 @@ namespace MediaTek86.view
         /// Initialisation de la fenêtre et du contrôleur
         /// Remplissage des champs avec les informations de l'absence en cours de modification
         /// Sauvegarde de l'absence avant modification pour affichage lors de la confirmation de modification
+        /// Remplissage d'une liste avec les absences sans celle en cours de modification
         /// </summary>
         /// <param name="Idpersonnel"></param>
         /// <param name="Datedebut"></param>
