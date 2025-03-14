@@ -171,11 +171,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\.documentation.xml" />
     <Content Include="bin\Debug\MediaTek86.exe" />
     <Content Include="bin\Debug\MediaTek86.pdb" />
     <Content Include="bin\Debug\MySql.Data.dll" />
-    <Content Include="bin\Debug\MySql.Data.xml" />
     <Content Include="bin\Debug\System.Buffers.dll" />
     <Content Include="bin\Debug\System.Memory.dll" />
     <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
