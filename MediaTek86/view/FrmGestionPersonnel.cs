@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MediaTek86.controller;
 using MediaTek86.model;
-using MediaTek86.view;
 
-namespace MediaTek86
+
+namespace MediaTek86.view
 {
     /// <summary>
     /// Fenêtre de gestion du personnel
@@ -30,6 +30,9 @@ namespace MediaTek86
         /// </summary>
         private FrmGestionPersonnelController controller;
 
+        /// <summary>
+        /// Liste de sauvegarde des personnels
+        /// </summary>
         List<Personnel> lesPersonnels = new List<Personnel>();
         
         /// <summary>

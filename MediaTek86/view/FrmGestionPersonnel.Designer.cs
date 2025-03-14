@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace MediaTek86
+namespace MediaTek86.view
 {
     partial class FrmGestionPersonnel
     {
