@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /.gitattributes
 /MediaTek86Install/MediaTek86Install.vdproj
+/.gitignore
