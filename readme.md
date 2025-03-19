@@ -15,7 +15,7 @@ Les fichiers nécessaires à l'installation et le test de l'application sont dis
 * un fichier d'installation au format MSI ;
 * un script SQL de création de la base de données, des utilisateurs et d'insertion de données test.
 
-Pour se connecter et tester l'application, vous devez utiliser les identifiants suivants :
+Pour vous connecter et tester l'application, vous devez utiliser les identifiants suivants :
 * login : **respo1**
 * mot de passe : **respoMEDIA86@**
 
