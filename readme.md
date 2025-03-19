@@ -23,6 +23,6 @@ Pour vous connecter et tester l'application, vous devez utiliser les identifiant
 
 Vous trouverez les fichiers de la documentation technique sous format html dans le dosssier [Documentation technique](https://github.com/filkat34/MediaTek86/tree/d0b8eb1b6a32e3bd3c997cd51c0cc8a8ae4f0259/Documentation%20technique) et pouvez également y accéder directement en cliquant [ici](https://www.filipposk.ovh/programmes/mediatek86/docutechnique/index.html).
 
-Vous trouvrez également une démonstration des différentes fonctionnalités de cette application à destination des utilisateurs en cliquant [ici](https://www.filipposk.ovh/programmes/mediatek86/videoUtilisateur.mp4).
+Vous trouvrez une démonstration des différentes fonctionnalités de cette application à destination des utilisateurs en cliquant [ici](https://www.filipposk.ovh/programmes/mediatek86/videoUtilisateur.mp4).
 
 
