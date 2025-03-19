@@ -60,6 +60,7 @@
             this.TxtBoxLogin.Name = "TxtBoxLogin";
             this.TxtBoxLogin.Size = new System.Drawing.Size(277, 20);
             this.TxtBoxLogin.TabIndex = 2;
+            this.TxtBoxLogin.Text = "respo1";
             // 
             // TxtBoxPwd
             // 
@@ -67,6 +68,7 @@
             this.TxtBoxPwd.Name = "TxtBoxPwd";
             this.TxtBoxPwd.Size = new System.Drawing.Size(277, 20);
             this.TxtBoxPwd.TabIndex = 3;
+            this.TxtBoxPwd.Text = "respoMEDIA86@";
             this.TxtBoxPwd.UseSystemPasswordChar = true;
             // 
             // BtnConnexion
