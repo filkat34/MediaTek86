@@ -1,5 +1,16 @@
-## Description
-Application de bureau windows permettant de gérer les personnels d'une médiathèque, leur affectation à un service et leurs absences. Il s'agit d'une application en POO et MVC destinée à être installée sur un poste d'un service administratif.
+## Contexte de la mission
+InfoTech Services 86 (ITS86) est une ESN spécialisée dans le développement informatique (applications de bureau, web, mobile), l’hébergement de site web, l’infogérance, la gestion de parc informatique et l’ingénierie système et réseau. Elle répond régulièrement à des appels d’offres en tant que société d’infogérance et prestataire de services informatiques.
+
+Parmi les marchés gagnés récemment par ITS86, on trouve celui de la gestion du parc informatique du réseau des médiathèques de la Vienne, MediaTek86, ainsi que l'informatisation de plusieurs activités internes des médiathèques ou en lien avec le public.
+
+En tant que technicien développeur junior travaillant dans le pôle Développement d'ITS86, il m'a été confié le développement d'une application de bureau permettant de gérer les personnels de chaque médiathèque.
+
+En plus du développement de l'application, il a été demandé de fournir une documentation technique au format html afin de faciliter sa maintenance ainsi qu'une vidéo de présentation des principales fonctionnalités de cette application à destination des utilisateurs.
+
+## Description de l'application
+Application de bureau windows permettant de gérer les personnels d'une médiathèque, leur affectation à un service et leurs absences. 
+
+Il s'agit d'une application en POO et MVC destinée à être installée sur un poste d'un service administratif.
 
 ## Fonctionnalités
 
@@ -21,8 +32,8 @@ Pour vous connecter et tester l'application, vous devez utiliser les identifiant
 
 ## Documentation
 
-Vous pouvez télécharger la documentation technique sous format zip [ici](https://github.com/filkat34/MediaTek86/blob/59e4719eb9a322fd6d08852ef28db17ddaaeba77/DocuTechnique.zip) et ou y accéder directement en ligne en cliquant [ici](https://www.filipposk.ovh/programmes/mediatek86/docutechnique/index.html).
+Vous pouvez télécharger la documentation technique sous format zip [ici](https://github.com/filkat34/MediaTek86/blob/59e4719eb9a322fd6d08852ef28db17ddaaeba77/DocuTechnique.zip).
 
-Vous trouvrez une démonstration des différentes fonctionnalités de cette application à destination des utilisateurs en cliquant [ici](https://www.filipposk.ovh/programmes/mediatek86/videoUtilisateur.mp4).
+Vous trouvrez une démonstration des différentes fonctionnalités de cette application en format vidéo en cliquant [ici]().
 
 
