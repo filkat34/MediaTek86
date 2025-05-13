@@ -32,6 +32,6 @@ Pour vous connecter et tester l'application, vous devez utiliser les identifiant
 
 ## Documentation
 
-Vous pouvez télécharger la documentation technique sous format zip [ici](https://github.com/filkat34/MediaTek86/blob/59e4719eb9a322fd6d08852ef28db17ddaaeba77/DocuTechnique.zip).
+Vous pouvez télécharger la documentation technique sous format zip [ici](https://github.com/filkat34/MediaTek86/blob/59e4719eb9a322fd6d08852ef28db17ddaaeba77/DocuTechnique.zip) ainsi que lire le compte-rendu d'activité de développement de cette application [ici](https://github.com/filkat34/MediaTek86/blob/e8226fe21f03220ee4d5022d89f88d65f8ac02d9/CRmediatek86.pdf).
 
 
